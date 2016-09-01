@@ -76,7 +76,7 @@ os.setpgrp()
 def clean(signum, frame):
     os.killpg(0, signal.SIGKILL)
 
-signal.signal(signal.SIGTERM, quit)
+signal.signal(signal.SIGTERM, clean)
 
 # ... Start our child-processes ...
 
