@@ -13,5 +13,12 @@ layout: default
     Дата публикации: {{ page.date | date: "%Y-%m-%d" }}
   </div>
 
+  <div class="tags">
+  Теги:
+  {% for tag in page.tags %}
+  	<a href="{{ site.basename }}/tag/{{ tag }}">#{{ tag }}</a>
+  {% endfor %}
+  </div>
+
   {% include disqus.html %}
 </article>

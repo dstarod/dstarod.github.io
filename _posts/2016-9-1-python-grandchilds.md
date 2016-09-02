@@ -2,7 +2,9 @@
 layout: post
 title: Python и пляски с процессами
 date: 2016-9-1
-tags: python process
+tags:
+- python
+- process
 categories: python development
 ---
 
