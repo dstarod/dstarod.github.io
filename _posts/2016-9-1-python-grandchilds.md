@@ -2,10 +2,8 @@
 layout: post
 title: Python и пляски с процессами
 date: 2016-9-1
-tags:
-- python
-- process
-categories: python development
+tags: [python, process]
+categories: [development]
 ---
 
 Про использование нескольких процессов в Python уже написано невообразимое множество статей, хороших и не очень;
