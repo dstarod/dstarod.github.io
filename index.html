@@ -15,7 +15,7 @@ layout: default
             <div class="tags">
                 Теги:
                 {% for tag in post.tags %}
-                    <a href="/tag/#{{ tag | slugify }}">#{{ tag }}</a>
+                    <a href="/tag/#{{ tag | slugify }}"> {{ tag }} </a>
                 {% endfor %}
             </div>
 
