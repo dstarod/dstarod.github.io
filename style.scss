@@ -33,7 +33,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: $helveticaNeue;
+  font-family: $sans_condensed;
   color: $darkerGray;
   font-weight: bold;
 
@@ -260,9 +260,6 @@ nav {
 
 .post {
 
-  h1, h2, h3, h4, h5, h6{
-    font-family: $sans_condensed;
-  }
 
   .entry{
     p{
