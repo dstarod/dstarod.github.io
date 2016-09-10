@@ -2,6 +2,21 @@
 //
 // VARIABLES
 //
+// @import 'https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|PT+Mono|PT+Sans|Roboto+Condensed:300|Roboto:100,300';
+
+@font-face {
+    font-family: RobotoCondenced;
+    src: url(/static/fonts/roboto/RobotoCondensed-Light.ttf);
+}
+@font-face {
+    font-family: Roboto;
+    src: url(/static/fonts/roboto/Roboto-Light.ttf);
+}
+@font-face {
+    font-family: PTMono;
+    src: url(/static/fonts/pt-mono/PTM55FT.ttf);
+}
+
 
 // Colors
 $blue: #4183C4;
@@ -14,9 +29,9 @@ $gray: #666;
 $lightGray: #eee;
 $white: #fff;
 
-$sans: 'Roboto', sans-serif;
-$sans_condensed: 'Roboto Condensed', sans-serif;
-$mono: 'PT Mono', monospace;
+$sans: Roboto, sans-serif;
+$sansCondensed: RobotoCondenced, 'Roboto Condenced', sans-serif;
+$mono: PTMono, 'PT Mono', monospace;
 
 // Font stacks
 $helvetica: Helvetica, Arial, sans-serif;
