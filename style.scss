@@ -258,9 +258,8 @@ nav {
 
 .post {
 
-
   .entry{
-    p{
+    *{
       font-family: $sans;
     }
     .highlighter-rouge{
