@@ -29,3 +29,5 @@ ls -d -1 /Applications/* ~/Library/Preferences/* \
 ~/Library/Caches/* ~/Library/Application\ Support/* \
 ~/Library/Logs/* | grep -i "jetbrains\|idea" | xargs rm -rf
 {% endhighlight %}
+
+Такой способ подойдет и к другим продуктам JetBrains.
