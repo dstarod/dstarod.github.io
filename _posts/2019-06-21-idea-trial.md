@@ -1,12 +1,12 @@
 ---
 layout: post
-title: Intellij IDEA - сброс триального периода (MacOS)
+title: Intellij IDEA - сброс триального периода
 tags: [apps,hack]
 categories: [applications]
 ---
 
 Аж в 2016 году я тут писал о том, [как удалить Idea полностью](https://dstarod.github.io/remove-idea-completely/), чтобы начать все с начала.
-Но времена меняются, и что работало раньше - не работает сейчас. Вот обновленный алгоритм. Обратите внимание на версию Idea.
+Но времена меняются, и что работало раньше - не работает сейчас. Вот обновленный алгоритм для MacOS. Обратите внимание на версию Idea.
 
 Удаляем файлы и каталоги:
 
@@ -27,3 +27,12 @@ plutil -convert binary1 com.apple.java.util.prefs.plist
 {% endhighlight %}
 
 А теперь перезагрузите компьютер и можно работать еще месяц спокойно.
+
+Для Linux всё проще, достаточно вот этого (обратите внимание на каталог .IntelliJIdea2019.2, с версиями может быть другим):
+
+{% highlight bash %}
+cd
+rm .IntelliJIdea2019.2/config/options/other.xml
+rm .IntelliJIdea2019.2/config/eval/*
+rm -rf .java/.userPrefs
+{% endhighlight %}
