@@ -1,0 +1,9 @@
+[submodule "themes/coder"]
+	path = themes/coder
+	url = https://github.com/luizdepra/hugo-coder
+[submodule "themes/ananke"]
+	path = themes/ananke
+	url = https://github.com/theNewDynamic/gohugo-theme-ananke
+[submodule "themes/beautiful_hugo"]
+	path = themes/beautiful_hugo
+	url = https://github.com/halogenica/beautifulhugo

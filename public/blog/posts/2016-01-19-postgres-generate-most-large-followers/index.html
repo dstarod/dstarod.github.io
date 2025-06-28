@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Postgres: generate the most large followers intersections | Блог</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="Задача: получить список пользователей твиттера, с которыми у одного из них есть общие фоловеры, и отсортировать по их количеству. Лучше всего продемонстрировать на примере. Создадим таблицу с идентификаторами пользователей и фоловеров:
+{% highlight sql %}
+CREATE TEMP TABLE f(uid INT, fid INT);
+INSERT INTO f(uid, fid) VALUES
+(1, 10), (1, 11), (1, 12), (1, 13), (1, 14),
+(2, 10), (2, 11), (2, 12),
+(3, 13), (3, 14),
+(4, 13), (4, 14), (4, 10), (4, 11)
+;
+{% endhighlight %}">
+    <meta name="generator" content="Hugo 0.147.8">
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+    <meta name="author" content="Ваше имя">
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+
+    
+
+
+    
+      
+
+    
+
+    
+
+    
+      <link rel="canonical" href="http://localhost:1313/blog/posts/2016-01-19-postgres-generate-most-large-followers/">
+    
+
+    <meta property="og:url" content="http://localhost:1313/blog/posts/2016-01-19-postgres-generate-most-large-followers/">
+  <meta property="og:site_name" content="Блог">
+  <meta property="og:title" content="Postgres: generate the most large followers intersections">
+  <meta property="og:description" content="Задача: получить список пользователей твиттера, с которыми у одного из них есть общие фоловеры, и отсортировать по их количеству. Лучше всего продемонстрировать на примере. Создадим таблицу с идентификаторами пользователей и фоловеров:
+{% highlight sql %} CREATE TEMP TABLE f(uid INT, fid INT); INSERT INTO f(uid, fid) VALUES (1, 10), (1, 11), (1, 12), (1, 13), (1, 14), (2, 10), (2, 11), (2, 12), (3, 13), (3, 14), (4, 13), (4, 14), (4, 10), (4, 11) ; {% endhighlight %}">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="blog">
+    <meta property="article:tag" content="Postgresql">
+
+  <meta itemprop="name" content="Postgres: generate the most large followers intersections">
+  <meta itemprop="description" content="Задача: получить список пользователей твиттера, с которыми у одного из них есть общие фоловеры, и отсортировать по их количеству. Лучше всего продемонстрировать на примере. Создадим таблицу с идентификаторами пользователей и фоловеров:
+{% highlight sql %} CREATE TEMP TABLE f(uid INT, fid INT); INSERT INTO f(uid, fid) VALUES (1, 10), (1, 11), (1, 12), (1, 13), (1, 14), (2, 10), (2, 11), (2, 12), (3, 13), (3, 14), (4, 13), (4, 14), (4, 10), (4, 11) ; {% endhighlight %}">
+  <meta itemprop="wordCount" content="143">
+  <meta itemprop="keywords" content="Postgresql">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Postgres: generate the most large followers intersections">
+  <meta name="twitter:description" content="Задача: получить список пользователей твиттера, с которыми у одного из них есть общие фоловеры, и отсортировать по их количеству. Лучше всего продемонстрировать на примере. Создадим таблицу с идентификаторами пользователей и фоловеров:
+{% highlight sql %} CREATE TEMP TABLE f(uid INT, fid INT); INSERT INTO f(uid, fid) VALUES (1, 10), (1, 11), (1, 12), (1, 13), (1, 14), (2, 10), (2, 11), (2, 12), (3, 13), (3, 14), (4, 13), (4, 14), (4, 10), (4, 11) ; {% endhighlight %}">
+
+	
+  </head><body class="ma0 avenir bg-near-white development">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l center items-center justify-between">
+    <a href="/" class="f3 fw2 hover-white white-90 dib no-underline">
+      
+        Блог
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      <div class="ananke-socials"></div>
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  
+  <article class="flex-l mw8 center ph3 flex-wrap justify-between">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked ttu">
+          
+        Blog
+      </aside><div id="sharing" class="mt3 ananke-socials"></div>
+<h1 class="f1 athelas mt3 mb1">Postgres: generate the most large followers intersections</h1>
+      
+      <p class="tracked"><strong>Ваше имя</strong>
+      </p>
+      
+      
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>Задача: получить список пользователей твиттера, с которыми у одного из них есть общие фоловеры, и отсортировать по их количеству. Лучше всего продемонстрировать на примере. Создадим таблицу с идентификаторами пользователей и фоловеров:</p>
+<p>{% highlight sql %}
+CREATE TEMP TABLE f(uid INT, fid INT);
+INSERT INTO f(uid, fid) VALUES
+(1, 10), (1, 11), (1, 12), (1, 13), (1, 14),
+(2, 10), (2, 11), (2, 12),
+(3, 13), (3, 14),
+(4, 13), (4, 14), (4, 10), (4, 11)
+;
+{% endhighlight %}</p>
+<p>А вот собственно и запрос, интересуют пересечения с пользователем 2, самые большие сверху.</p>
+<p>{% highlight sql %}
+SELECT uid, array_agg(fid) followers_intersect
+FROM f GROUP BY uid
+ORDER BY cardinality(
+(
+SELECT array_agg(a1) FROM unnest(array_agg(fid)) a1
+INNER JOIN unnest(
+(SELECT array_agg(fid) FROM f WHERE uid=2)::INT[]
+) a2
+ON a1=a2
+)::INT[]
+) DESC NULLS LAST;
+{% endhighlight %}</p>
+<p>Результат, как и ожидалось:</p>
+<ol>
+<li>&ldquo;{10,11,12,13,14}&rdquo;</li>
+<li>&ldquo;{10,11,12}&rdquo;</li>
+<li>&ldquo;{13,14,10,11}&rdquo;</li>
+<li>&ldquo;{13,14}&rdquo;</li>
+</ol>
+<ul class="pa0">
+  
+   <li class="list di">
+     <a href="/tags/postgresql/" class="link f5 grow br-pill ba ph3 pv2 mb2 dib black sans-serif no-underline">Postgresql</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white white-70 dn dib-ns pv2 ph3 no-underline" href="http://localhost:1313/" >
+    &copy;  Блог 2025 
+  </a>
+    <div><div class="ananke-socials"></div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>

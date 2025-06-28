@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Plugin on Круг интересов</title>
+    <link>http://localhost:1313/categories/plugin/</link>
+    <description>Recent content in Plugin on Круг интересов</description>
+    <generator>Hugo</generator>
+    <language>ru-RU</language>
+    <atom:link href="http://localhost:1313/categories/plugin/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Плагин для Sublime Text своими руками</title>
+      <link>http://localhost:1313/%D0%BF%D0%BB%D0%B0%D0%B3%D0%B8%D0%BD-%D0%B4%D0%BB%D1%8F-sublime-text-%D1%81%D0%B2%D0%BE%D0%B8%D0%BC%D0%B8-%D1%80%D1%83%D0%BA%D0%B0%D0%BC%D0%B8/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/%D0%BF%D0%BB%D0%B0%D0%B3%D0%B8%D0%BD-%D0%B4%D0%BB%D1%8F-sublime-text-%D1%81%D0%B2%D0%BE%D0%B8%D0%BC%D0%B8-%D1%80%D1%83%D0%BA%D0%B0%D0%BC%D0%B8/</guid>
+      <description>&lt;p&gt;Не секрет, что одним из самых популярных редакторов кода у разработчиков на сегодняшний день&#xA;является &lt;a href=&#34;https://www.sublimetext.com/&#34;&gt;Sublime Text&lt;/a&gt;. Кроме своих индивидуальных киллер-фич,&#xA;которые вскоре стали копировать разработчики других продуктов той-же ниши&#xA;(например, мультиредактирование), он хорош своей расширяемостью плагинами, коих великое множество на любой вкус. Думаю, не последней причиной такого их количества является простота создания. Для примера возьмем и напишем полезный инструмент, который будет брать как попало отформатированный Python-словарь и выдавать JSON стройными рядами.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

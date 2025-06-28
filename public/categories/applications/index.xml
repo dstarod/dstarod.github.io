@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Applications on Круг интересов</title>
+    <link>http://localhost:1313/categories/applications/</link>
+    <description>Recent content in Applications on Круг интересов</description>
+    <generator>Hugo</generator>
+    <language>ru-RU</language>
+    <atom:link href="http://localhost:1313/categories/applications/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Полное удаление Intellij IDEA или Вечный Триал</title>
+      <link>http://localhost:1313/%D0%BF%D0%BE%D0%BB%D0%BD%D0%BE%D0%B5-%D1%83%D0%B4%D0%B0%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-intellij-idea-%D0%B8%D0%BB%D0%B8-%D0%B2%D0%B5%D1%87%D0%BD%D1%8B%D0%B9-%D1%82%D1%80%D0%B8%D0%B0%D0%BB/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/%D0%BF%D0%BE%D0%BB%D0%BD%D0%BE%D0%B5-%D1%83%D0%B4%D0%B0%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-intellij-idea-%D0%B8%D0%BB%D0%B8-%D0%B2%D0%B5%D1%87%D0%BD%D1%8B%D0%B9-%D1%82%D1%80%D0%B8%D0%B0%D0%BB/</guid>
+      <description>&lt;p&gt;Одна из самых шикарных IDE для full-stack разработки - Intellij IDEA. Community версия бесплатна, и для разработки на Java/Android ее хватит за глаза.&#xA;А если приходится писать на Python, PL/SQL, Groovy, JavaScript, и еще горсточке языков? Тут только Professional вариант, вот только он стоит денег, хоть он того и стоит.&#xA;Конечно, для начала вам предлагается пробный период на месяц, в течении которого можно успеть по достоинству оценить эту IDE.&#xA;Но что, если пробный период закончился, а денег на приобретение все еще нет?&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
