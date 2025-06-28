@@ -11,7 +11,3 @@ description = 'В основном тут про IT'
 [permalinks]
   [permalinks.page]
     posts = '/:slug/'
-
-[services]
-  [services.googleAnalytics]
-    id = 'UA-83663405-1'
