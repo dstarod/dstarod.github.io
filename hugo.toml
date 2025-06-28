@@ -11,3 +11,7 @@ description = 'В основном тут про IT'
 [permalinks]
   [permalinks.page]
     posts = '/:slug/'
+
+[services]
+  [services.disqus]
+    shortname = 'dstarod'
