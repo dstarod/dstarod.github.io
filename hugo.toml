@@ -1,11 +1,11 @@
 baseURL = 'https://dstarod.github.io/'
 languageCode = 'ru-RU'
 title = 'Круг интересов'
-theme = 'ananke'
-defaultContentLanguage = "ru"
+theme = 'beautiful_hugo'
+defaultContentLanguage = 'ru'
 
 [params]
-description = "В основном тут про IT"
+description = 'В основном тут про IT'
 # subtitle = 'Reference, Tutorials, and Explanations'
 
 [permalinks]
