@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Nlp on Круг интересов</title>
-    <link>/tags/nlp/</link>
+    <link>https://dstarod.github.io/tags/nlp/</link>
     <description>Recent content in Nlp on Круг интересов</description>
     <generator>Hugo</generator>
     <language>ru-RU</language>
     <lastBuildDate>Fri, 29 Jan 2016 00:00:00 +0300</lastBuildDate>
-    <atom:link href="/tags/nlp/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://dstarod.github.io/tags/nlp/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Python NLTK &#43; Stanford NLP</title>
-      <link>/python-nltk-stanford-nlp/</link>
+      <link>https://dstarod.github.io/python-nltk-stanford-nlp/</link>
       <pubDate>Fri, 29 Jan 2016 00:00:00 +0300</pubDate>
-      <guid>/python-nltk-stanford-nlp/</guid>
+      <guid>https://dstarod.github.io/python-nltk-stanford-nlp/</guid>
       <description>&lt;p&gt;Как известно, в Python стандартом работы с натуральным языком де-факто является NLTK. Несмотря на это, я довольно долго использовал Pattern от CLiPS из-за его простоты и скорости (многие отмечают тормознутость NLTK).&lt;/p&gt;&#xA;&lt;p&gt;Но наступил момент, когда почти вся кодовая база была успешно портирована на Python 3.5, а разработчики Pattern так и не сделали версию с поддержкой третьей версии. И, судя по всему, не собираются.&lt;/p&gt;&#xA;&lt;p&gt;Что-ж, будем использовать NLTK. От него мне нужны: токенизация, выделение POS (part-of-speech), получение N-grams и классификация твитов на группы с использованием Naive Bayes. Все это дело на Python 3.5.&lt;/p&gt;</description>
     </item>
   </channel>
