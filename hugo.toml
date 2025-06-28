@@ -13,5 +13,5 @@ description = 'В основном тут про IT'
     posts = '/:slug/'
 
 [services]
-  [services.disqus]
-    shortname = 'dstarod'
+  [services.googleAnalytics]
+    id = 'UA-83663405-1'
