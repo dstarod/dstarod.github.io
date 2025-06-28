@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Python on Круг интересов</title>
-    <link>http://localhost:1313/tags/python/</link>
+    <link>/tags/python/</link>
     <description>Recent content in Python on Круг интересов</description>
     <generator>Hugo</generator>
     <language>ru-RU</language>
     <lastBuildDate>Thu, 17 Aug 2017 00:00:00 +0300</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/tags/python/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Создание валидной цепочки SSL сертификатов</title>
-      <link>http://localhost:1313/fake-ssl-cert-chain/</link>
+      <link>/fake-ssl-cert-chain/</link>
       <pubDate>Thu, 17 Aug 2017 00:00:00 +0300</pubDate>
-      <guid>http://localhost:1313/fake-ssl-cert-chain/</guid>
+      <guid>/fake-ssl-cert-chain/</guid>
       <description>&lt;p&gt;Для написания тестов на валидность загружаемых сертификатов мне потребовалось создать несколько вариантов&#xA;цепочек и приватных ключей. Прошерстив некоторый объем интернета, я собрал всю необходимую информацию о том,&#xA;как локально сгенерировать корректную цепочку SSL сертификатов, которая будет проходить проверку стандартными&#xA;средствами.&lt;/p&gt;&#xA;&lt;p&gt;Чтобы не писать кучу команд всякий раз, напишем bash-скрипт. Для начала, зададим несколько настроечных констант:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;CSR_FILE&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;csrfile.csr&amp;#34;&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;KEY_BITS&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;2048&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;CONF_DIR&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;conf&amp;#34;&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;CHAIN_CRT&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;ca_chain.crt&amp;#34;&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Затем пара функций для подготовки и последующей подчистки каталога с настройками:&lt;/p&gt;</description>
     </item>
     <item>
       <title>Python и пляски с процессами</title>
-      <link>http://localhost:1313/python-grandchilds/</link>
+      <link>/python-grandchilds/</link>
       <pubDate>Thu, 01 Sep 2016 00:00:00 +0300</pubDate>
-      <guid>http://localhost:1313/python-grandchilds/</guid>
+      <guid>/python-grandchilds/</guid>
       <description>&lt;p&gt;Про использование нескольких процессов в Python уже написано невообразимое множество статей, хороших и не очень;&#xA;сломано немало копий в обсуждении проблемы GIL и псевдопотоков. Я же просто хочу рассказать о том, как решалась&#xA;задача с управлением небольшого дерева дочерних процессов.&lt;/p&gt;&#xA;&lt;p&gt;Итак, исходная ситуация. Основной процесс запускает два дочерних, используя &lt;code&gt;multiprocessing.Process&lt;/code&gt;, передает туда&#xA;очередь &lt;code&gt;multiprocessing.Queue&lt;/code&gt;. Первый дочерний процесс просто собирает какие-то данные и пишет в очередь,&#xA;второй же запускает еще несколько процессов, куда передает ту-же очередь, с которой они и работают.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Python NLTK &#43; Stanford NLP</title>
-      <link>http://localhost:1313/python-nltk-stanford-nlp/</link>
+      <link>/python-nltk-stanford-nlp/</link>
       <pubDate>Fri, 29 Jan 2016 00:00:00 +0300</pubDate>
-      <guid>http://localhost:1313/python-nltk-stanford-nlp/</guid>
+      <guid>/python-nltk-stanford-nlp/</guid>
       <description>&lt;p&gt;Как известно, в Python стандартом работы с натуральным языком де-факто является NLTK. Несмотря на это, я довольно долго использовал Pattern от CLiPS из-за его простоты и скорости (многие отмечают тормознутость NLTK).&lt;/p&gt;&#xA;&lt;p&gt;Но наступил момент, когда почти вся кодовая база была успешно портирована на Python 3.5, а разработчики Pattern так и не сделали версию с поддержкой третьей версии. И, судя по всему, не собираются.&lt;/p&gt;&#xA;&lt;p&gt;Что-ж, будем использовать NLTK. От него мне нужны: токенизация, выделение POS (part-of-speech), получение N-grams и классификация твитов на группы с использованием Naive Bayes. Все это дело на Python 3.5.&lt;/p&gt;</description>
     </item>
   </channel>

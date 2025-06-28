@@ -2,73 +2,73 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Круг интересов</title>
-    <link>http://localhost:1313/tags/</link>
+    <link>/tags/</link>
     <description>Recent content in Tags on Круг интересов</description>
     <generator>Hugo</generator>
     <language>ru-RU</language>
     <lastBuildDate>Thu, 15 Aug 2019 00:00:00 +0300</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Postgresql</title>
-      <link>http://localhost:1313/tags/postgresql/</link>
+      <link>/tags/postgresql/</link>
       <pubDate>Thu, 15 Aug 2019 00:00:00 +0300</pubDate>
-      <guid>http://localhost:1313/tags/postgresql/</guid>
+      <guid>/tags/postgresql/</guid>
       <description></description>
     </item>
     <item>
       <title>Apps</title>
-      <link>http://localhost:1313/tags/apps/</link>
+      <link>/tags/apps/</link>
       <pubDate>Fri, 21 Jun 2019 00:00:00 +0300</pubDate>
-      <guid>http://localhost:1313/tags/apps/</guid>
+      <guid>/tags/apps/</guid>
       <description></description>
     </item>
     <item>
       <title>Hack</title>
-      <link>http://localhost:1313/tags/hack/</link>
+      <link>/tags/hack/</link>
       <pubDate>Fri, 21 Jun 2019 00:00:00 +0300</pubDate>
-      <guid>http://localhost:1313/tags/hack/</guid>
+      <guid>/tags/hack/</guid>
       <description></description>
     </item>
     <item>
       <title>Memo</title>
-      <link>http://localhost:1313/tags/memo/</link>
+      <link>/tags/memo/</link>
       <pubDate>Thu, 17 Aug 2017 00:00:00 +0300</pubDate>
-      <guid>http://localhost:1313/tags/memo/</guid>
+      <guid>/tags/memo/</guid>
       <description></description>
     </item>
     <item>
       <title>Python</title>
-      <link>http://localhost:1313/tags/python/</link>
+      <link>/tags/python/</link>
       <pubDate>Thu, 17 Aug 2017 00:00:00 +0300</pubDate>
-      <guid>http://localhost:1313/tags/python/</guid>
+      <guid>/tags/python/</guid>
       <description></description>
     </item>
     <item>
       <title>Ssl</title>
-      <link>http://localhost:1313/tags/ssl/</link>
+      <link>/tags/ssl/</link>
       <pubDate>Thu, 17 Aug 2017 00:00:00 +0300</pubDate>
-      <guid>http://localhost:1313/tags/ssl/</guid>
+      <guid>/tags/ssl/</guid>
       <description></description>
     </item>
     <item>
       <title>Postgres</title>
-      <link>http://localhost:1313/tags/postgres/</link>
+      <link>/tags/postgres/</link>
       <pubDate>Mon, 09 Jan 2017 00:00:00 +0300</pubDate>
-      <guid>http://localhost:1313/tags/postgres/</guid>
+      <guid>/tags/postgres/</guid>
       <description></description>
     </item>
     <item>
       <title>Process</title>
-      <link>http://localhost:1313/tags/process/</link>
+      <link>/tags/process/</link>
       <pubDate>Thu, 01 Sep 2016 00:00:00 +0300</pubDate>
-      <guid>http://localhost:1313/tags/process/</guid>
+      <guid>/tags/process/</guid>
       <description></description>
     </item>
     <item>
       <title>Nlp</title>
-      <link>http://localhost:1313/tags/nlp/</link>
+      <link>/tags/nlp/</link>
       <pubDate>Fri, 29 Jan 2016 00:00:00 +0300</pubDate>
-      <guid>http://localhost:1313/tags/nlp/</guid>
+      <guid>/tags/nlp/</guid>
       <description></description>
     </item>
   </channel>

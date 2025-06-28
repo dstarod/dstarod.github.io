@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Process on Круг интересов</title>
-    <link>http://localhost:1313/tags/process/</link>
+    <link>/tags/process/</link>
     <description>Recent content in Process on Круг интересов</description>
     <generator>Hugo</generator>
     <language>ru-RU</language>
     <lastBuildDate>Thu, 01 Sep 2016 00:00:00 +0300</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/process/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/tags/process/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Python и пляски с процессами</title>
-      <link>http://localhost:1313/python-grandchilds/</link>
+      <link>/python-grandchilds/</link>
       <pubDate>Thu, 01 Sep 2016 00:00:00 +0300</pubDate>
-      <guid>http://localhost:1313/python-grandchilds/</guid>
+      <guid>/python-grandchilds/</guid>
       <description>&lt;p&gt;Про использование нескольких процессов в Python уже написано невообразимое множество статей, хороших и не очень;&#xA;сломано немало копий в обсуждении проблемы GIL и псевдопотоков. Я же просто хочу рассказать о том, как решалась&#xA;задача с управлением небольшого дерева дочерних процессов.&lt;/p&gt;&#xA;&lt;p&gt;Итак, исходная ситуация. Основной процесс запускает два дочерних, используя &lt;code&gt;multiprocessing.Process&lt;/code&gt;, передает туда&#xA;очередь &lt;code&gt;multiprocessing.Queue&lt;/code&gt;. Первый дочерний процесс просто собирает какие-то данные и пишет в очередь,&#xA;второй же запускает еще несколько процессов, куда передает ту-же очередь, с которой они и работают.&lt;/p&gt;</description>
     </item>
   </channel>

@@ -2,38 +2,38 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Memo on Круг интересов</title>
-    <link>http://localhost:1313/tags/memo/</link>
+    <link>/tags/memo/</link>
     <description>Recent content in Memo on Круг интересов</description>
     <generator>Hugo</generator>
     <language>ru-RU</language>
     <lastBuildDate>Thu, 17 Aug 2017 00:00:00 +0300</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/memo/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/tags/memo/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Создание валидной цепочки SSL сертификатов</title>
-      <link>http://localhost:1313/fake-ssl-cert-chain/</link>
+      <link>/fake-ssl-cert-chain/</link>
       <pubDate>Thu, 17 Aug 2017 00:00:00 +0300</pubDate>
-      <guid>http://localhost:1313/fake-ssl-cert-chain/</guid>
+      <guid>/fake-ssl-cert-chain/</guid>
       <description>&lt;p&gt;Для написания тестов на валидность загружаемых сертификатов мне потребовалось создать несколько вариантов&#xA;цепочек и приватных ключей. Прошерстив некоторый объем интернета, я собрал всю необходимую информацию о том,&#xA;как локально сгенерировать корректную цепочку SSL сертификатов, которая будет проходить проверку стандартными&#xA;средствами.&lt;/p&gt;&#xA;&lt;p&gt;Чтобы не писать кучу команд всякий раз, напишем bash-скрипт. Для начала, зададим несколько настроечных констант:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;CSR_FILE&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;csrfile.csr&amp;#34;&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;KEY_BITS&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;2048&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;CONF_DIR&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;conf&amp;#34;&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;CHAIN_CRT&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;ca_chain.crt&amp;#34;&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Затем пара функций для подготовки и последующей подчистки каталога с настройками:&lt;/p&gt;</description>
     </item>
     <item>
       <title>Удобные команды и алиасы для GIT</title>
-      <link>http://localhost:1313/git-tricks-and-aliases-with-fish/</link>
+      <link>/git-tricks-and-aliases-with-fish/</link>
       <pubDate>Thu, 27 Jul 2017 00:00:00 +0300</pubDate>
-      <guid>http://localhost:1313/git-tricks-and-aliases-with-fish/</guid>
+      <guid>/git-tricks-and-aliases-with-fish/</guid>
       <description>&lt;p&gt;Несколько удобных алиасов для git, чтобы не потерять, положу это здесь.&#xA;Я использую оболочку &lt;a href=&#34;https://fishshell.com/&#34;&gt;fish&lt;/a&gt;, поэтому возможно какие-то команды потребуется адаптировать для вашей.&#xA;Шикарный набор советов &lt;a href=&#34;https://github.com/git-tips/tips&#34;&gt;здесь&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Лог в виде дерева:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt; gl&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    git log --oneline --decorate --graph --all&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;end&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Интерактивный rebase с указанного в аргументах коммита:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt; gri&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    git rebase -i $argv&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;end&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Перезапись локальной ветки свежей веткой с origin:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt; grho&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    git fetch origin &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;gb&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    git reset --hard FETCH_HEAD&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;end&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Имя текущей ветки:&lt;/p&gt;</description>
     </item>
     <item>
       <title>Плагин для Sublime Text своими руками</title>
-      <link>http://localhost:1313/sublime-plugin-dict-to-json/</link>
+      <link>/sublime-plugin-dict-to-json/</link>
       <pubDate>Thu, 13 Apr 2017 00:00:00 +0300</pubDate>
-      <guid>http://localhost:1313/sublime-plugin-dict-to-json/</guid>
+      <guid>/sublime-plugin-dict-to-json/</guid>
       <description>&lt;p&gt;Не секрет, что одним из самых популярных редакторов кода у разработчиков на сегодняшний день&#xA;является &lt;a href=&#34;https://www.sublimetext.com/&#34;&gt;Sublime Text&lt;/a&gt;. Кроме своих индивидуальных киллер-фич,&#xA;которые вскоре стали копировать разработчики других продуктов той-же ниши&#xA;(например, мультиредактирование), он хорош своей расширяемостью плагинами, коих великое множество на любой вкус. Думаю, не последней причиной такого их количества является простота создания. Для примера возьмем и напишем полезный инструмент, который будет брать как попало отформатированный Python-словарь и выдавать JSON стройными рядами.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Как остановить зависшую транзакцию в PostgreSQL</title>
-      <link>http://localhost:1313/terminate-transaction-lock-postgres/</link>
+      <link>/terminate-transaction-lock-postgres/</link>
       <pubDate>Mon, 09 Jan 2017 00:00:00 +0300</pubDate>
-      <guid>http://localhost:1313/terminate-transaction-lock-postgres/</guid>
+      <guid>/terminate-transaction-lock-postgres/</guid>
       <description>&lt;p&gt;Сегодня PostgreSQL является одной из самых популярных СУБД, и, судя по новостям, многие крупные конторы переходят на ее использование&#xA;с коммерческих продуктов признанных лидеров софтверного фронта. Поэтому думаю, что пошаговое решение ситуации с остановкой зависшей&#xA;транзакции будет полезно многим. Я столкнулся с таковой, применяя транзакцию, создающую внешний ключ к заблокированной таблице.&lt;/p&gt;&#xA;&lt;p&gt;Итак, что нам нужно сделать:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Найти ID заблокированной таблицы;&lt;/li&gt;&#xA;&lt;li&gt;Найти ID транзакции, которая зависла;&lt;/li&gt;&#xA;&lt;li&gt;Попытаться остановить её корректно, прервать в случае оказания сопротивления.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;Допустим, запрос заблокировал таблицу &amp;ldquo;mytable&amp;rdquo;. Получим её ID:&lt;/p&gt;</description>
     </item>
   </channel>
