@@ -1,26 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Hack on Круг интересов</title>
-    <link>https://dstarod.github.io/tags/hack/</link>
-    <description>Recent content in Hack on Круг интересов</description>
-    <generator>Hugo</generator>
-    <language>ru-RU</language>
-    <lastBuildDate>Fri, 21 Jun 2019 00:00:00 +0300</lastBuildDate>
-    <atom:link href="https://dstarod.github.io/tags/hack/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Intellij IDEA - сброс триального периода</title>
-      <link>https://dstarod.github.io/idea-trial/</link>
-      <pubDate>Fri, 21 Jun 2019 00:00:00 +0300</pubDate>
-      <guid>https://dstarod.github.io/idea-trial/</guid>
-      <description>&lt;p&gt;Аж в 2016 году я тут писал о том, &lt;a href=&#34;https://dstarod.github.io/remove-idea-completely/&#34;&gt;как удалить Idea полностью&lt;/a&gt;, чтобы начать все с начала.&#xA;Но времена меняются, и что работало раньше - не работает сейчас. Вот обновленный алгоритм для MacOS. Обратите внимание на версию Idea.&lt;/p&gt;&#xA;&lt;p&gt;Удаляем файлы и каталоги:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cd ~/Library/Preferences&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ls | grep &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;jetbrains&amp;#39;&lt;/span&gt; | xargs rm&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;rm IntelliJIdea2019.1/eval/*.key&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;rm IntelliJIdea2019.1/options/other.xml&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Теперь надо удалить записи из одного файла plist, который хранится в закодированном виде. Придется его для начала сконвертировать в текст а потом обратно:&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Полное удаление Intellij IDEA или Вечный Триал</title>
-      <link>https://dstarod.github.io/remove-idea-completely/</link>
-      <pubDate>Wed, 21 Sep 2016 00:00:00 +0300</pubDate>
-      <guid>https://dstarod.github.io/remove-idea-completely/</guid>
-      <description>&lt;p&gt;Одна из самых шикарных IDE для full-stack разработки - Intellij IDEA. Community версия бесплатна, и для разработки на Java/Android ее хватит за глаза.&#xA;А если приходится писать на Python, PL/SQL, Groovy, JavaScript, и еще горсточке языков? Тут только Professional вариант, вот только он стоит денег, хоть он того и стоит.&#xA;Конечно, для начала вам предлагается пробный период на месяц, в течении которого можно успеть по достоинству оценить эту IDE.&#xA;Но что, если пробный период закончился, а денег на приобретение все еще нет?&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hack on Круг интересов</title><link>https://dstarod.github.io/tags/hack/</link><description>Recent content in Hack on Круг интересов</description><generator>Hugo</generator><language>ru-RU</language><lastBuildDate>Fri, 21 Jun 2019 00:00:00 +0300</lastBuildDate><atom:link href="https://dstarod.github.io/tags/hack/index.xml" rel="self" type="application/rss+xml"/><item><title>Intellij IDEA - сброс триального периода</title><link>https://dstarod.github.io/idea-trial/</link><pubDate>Fri, 21 Jun 2019 00:00:00 +0300</pubDate><guid>https://dstarod.github.io/idea-trial/</guid><description>&lt;p>Аж в 2016 году я тут писал о том, &lt;a href="https://dstarod.github.io/remove-idea-completely/">как удалить Idea полностью&lt;/a>, чтобы начать все с начала.
+Но времена меняются, и что работало раньше - не работает сейчас. Вот обновленный алгоритм для MacOS. Обратите внимание на версию Idea.&lt;/p>
+&lt;p>Удаляем файлы и каталоги:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>cd ~/Library/Preferences
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ls | grep &lt;span style="color:#e6db74">&amp;#39;jetbrains&amp;#39;&lt;/span> | xargs rm
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>rm IntelliJIdea2019.1/eval/*.key
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>rm IntelliJIdea2019.1/options/other.xml
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Теперь надо удалить записи из одного файла plist, который хранится в закодированном виде. Придется его для начала сконвертировать в текст а потом обратно:&lt;/p></description></item><item><title>Полное удаление Intellij IDEA или Вечный Триал</title><link>https://dstarod.github.io/remove-idea-completely/</link><pubDate>Wed, 21 Sep 2016 00:00:00 +0300</pubDate><guid>https://dstarod.github.io/remove-idea-completely/</guid><description>&lt;p>Одна из самых шикарных IDE для full-stack разработки - Intellij IDEA. Community версия бесплатна, и для разработки на Java/Android ее хватит за глаза.
+А если приходится писать на Python, PL/SQL, Groovy, JavaScript, и еще горсточке языков? Тут только Professional вариант, вот только он стоит денег, хоть он того и стоит.
+Конечно, для начала вам предлагается пробный период на месяц, в течении которого можно успеть по достоинству оценить эту IDE.
+Но что, если пробный период закончился, а денег на приобретение все еще нет?&lt;/p></description></item></channel></rss>

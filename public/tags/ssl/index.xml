@@ -1,19 +1,10 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Ssl on Круг интересов</title>
-    <link>https://dstarod.github.io/tags/ssl/</link>
-    <description>Recent content in Ssl on Круг интересов</description>
-    <generator>Hugo</generator>
-    <language>ru-RU</language>
-    <lastBuildDate>Thu, 17 Aug 2017 00:00:00 +0300</lastBuildDate>
-    <atom:link href="https://dstarod.github.io/tags/ssl/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Создание валидной цепочки SSL сертификатов</title>
-      <link>https://dstarod.github.io/fake-ssl-cert-chain/</link>
-      <pubDate>Thu, 17 Aug 2017 00:00:00 +0300</pubDate>
-      <guid>https://dstarod.github.io/fake-ssl-cert-chain/</guid>
-      <description>&lt;p&gt;Для написания тестов на валидность загружаемых сертификатов мне потребовалось создать несколько вариантов&#xA;цепочек и приватных ключей. Прошерстив некоторый объем интернета, я собрал всю необходимую информацию о том,&#xA;как локально сгенерировать корректную цепочку SSL сертификатов, которая будет проходить проверку стандартными&#xA;средствами.&lt;/p&gt;&#xA;&lt;p&gt;Чтобы не писать кучу команд всякий раз, напишем bash-скрипт. Для начала, зададим несколько настроечных констант:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;CSR_FILE&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;csrfile.csr&amp;#34;&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;KEY_BITS&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;2048&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;CONF_DIR&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;conf&amp;#34;&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;CHAIN_CRT&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;ca_chain.crt&amp;#34;&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Затем пара функций для подготовки и последующей подчистки каталога с настройками:&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ssl on Круг интересов</title><link>https://dstarod.github.io/tags/ssl/</link><description>Recent content in Ssl on Круг интересов</description><generator>Hugo</generator><language>ru-RU</language><lastBuildDate>Thu, 17 Aug 2017 00:00:00 +0300</lastBuildDate><atom:link href="https://dstarod.github.io/tags/ssl/index.xml" rel="self" type="application/rss+xml"/><item><title>Создание валидной цепочки SSL сертификатов</title><link>https://dstarod.github.io/fake-ssl-cert-chain/</link><pubDate>Thu, 17 Aug 2017 00:00:00 +0300</pubDate><guid>https://dstarod.github.io/fake-ssl-cert-chain/</guid><description>&lt;p>Для написания тестов на валидность загружаемых сертификатов мне потребовалось создать несколько вариантов
+цепочек и приватных ключей. Прошерстив некоторый объем интернета, я собрал всю необходимую информацию о том,
+как локально сгенерировать корректную цепочку SSL сертификатов, которая будет проходить проверку стандартными
+средствами.&lt;/p>
+&lt;p>Чтобы не писать кучу команд всякий раз, напишем bash-скрипт. Для начала, зададим несколько настроечных констант:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>CSR_FILE&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;csrfile.csr&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>KEY_BITS&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">2048&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>CONF_DIR&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;conf&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>CHAIN_CRT&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;ca_chain.crt&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Затем пара функций для подготовки и последующей подчистки каталога с настройками:&lt;/p></description></item></channel></rss>

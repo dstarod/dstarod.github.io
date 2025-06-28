@@ -1,40 +1,38 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Memo on Круг интересов</title>
-    <link>https://dstarod.github.io/tags/memo/</link>
-    <description>Recent content in Memo on Круг интересов</description>
-    <generator>Hugo</generator>
-    <language>ru-RU</language>
-    <lastBuildDate>Thu, 17 Aug 2017 00:00:00 +0300</lastBuildDate>
-    <atom:link href="https://dstarod.github.io/tags/memo/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Создание валидной цепочки SSL сертификатов</title>
-      <link>https://dstarod.github.io/fake-ssl-cert-chain/</link>
-      <pubDate>Thu, 17 Aug 2017 00:00:00 +0300</pubDate>
-      <guid>https://dstarod.github.io/fake-ssl-cert-chain/</guid>
-      <description>&lt;p&gt;Для написания тестов на валидность загружаемых сертификатов мне потребовалось создать несколько вариантов&#xA;цепочек и приватных ключей. Прошерстив некоторый объем интернета, я собрал всю необходимую информацию о том,&#xA;как локально сгенерировать корректную цепочку SSL сертификатов, которая будет проходить проверку стандартными&#xA;средствами.&lt;/p&gt;&#xA;&lt;p&gt;Чтобы не писать кучу команд всякий раз, напишем bash-скрипт. Для начала, зададим несколько настроечных констант:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;CSR_FILE&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;csrfile.csr&amp;#34;&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;KEY_BITS&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;2048&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;CONF_DIR&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;conf&amp;#34;&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;CHAIN_CRT&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;ca_chain.crt&amp;#34;&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Затем пара функций для подготовки и последующей подчистки каталога с настройками:&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Удобные команды и алиасы для GIT</title>
-      <link>https://dstarod.github.io/git-tricks-and-aliases-with-fish/</link>
-      <pubDate>Thu, 27 Jul 2017 00:00:00 +0300</pubDate>
-      <guid>https://dstarod.github.io/git-tricks-and-aliases-with-fish/</guid>
-      <description>&lt;p&gt;Несколько удобных алиасов для git, чтобы не потерять, положу это здесь.&#xA;Я использую оболочку &lt;a href=&#34;https://fishshell.com/&#34;&gt;fish&lt;/a&gt;, поэтому возможно какие-то команды потребуется адаптировать для вашей.&#xA;Шикарный набор советов &lt;a href=&#34;https://github.com/git-tips/tips&#34;&gt;здесь&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Лог в виде дерева:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt; gl&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    git log --oneline --decorate --graph --all&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;end&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Интерактивный rebase с указанного в аргументах коммита:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt; gri&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    git rebase -i $argv&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;end&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Перезапись локальной ветки свежей веткой с origin:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt; grho&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    git fetch origin &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;gb&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    git reset --hard FETCH_HEAD&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;end&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Имя текущей ветки:&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Плагин для Sublime Text своими руками</title>
-      <link>https://dstarod.github.io/sublime-plugin-dict-to-json/</link>
-      <pubDate>Thu, 13 Apr 2017 00:00:00 +0300</pubDate>
-      <guid>https://dstarod.github.io/sublime-plugin-dict-to-json/</guid>
-      <description>&lt;p&gt;Не секрет, что одним из самых популярных редакторов кода у разработчиков на сегодняшний день&#xA;является &lt;a href=&#34;https://www.sublimetext.com/&#34;&gt;Sublime Text&lt;/a&gt;. Кроме своих индивидуальных киллер-фич,&#xA;которые вскоре стали копировать разработчики других продуктов той-же ниши&#xA;(например, мультиредактирование), он хорош своей расширяемостью плагинами, коих великое множество на любой вкус. Думаю, не последней причиной такого их количества является простота создания. Для примера возьмем и напишем полезный инструмент, который будет брать как попало отформатированный Python-словарь и выдавать JSON стройными рядами.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Как остановить зависшую транзакцию в PostgreSQL</title>
-      <link>https://dstarod.github.io/terminate-transaction-lock-postgres/</link>
-      <pubDate>Mon, 09 Jan 2017 00:00:00 +0300</pubDate>
-      <guid>https://dstarod.github.io/terminate-transaction-lock-postgres/</guid>
-      <description>&lt;p&gt;Сегодня PostgreSQL является одной из самых популярных СУБД, и, судя по новостям, многие крупные конторы переходят на ее использование&#xA;с коммерческих продуктов признанных лидеров софтверного фронта. Поэтому думаю, что пошаговое решение ситуации с остановкой зависшей&#xA;транзакции будет полезно многим. Я столкнулся с таковой, применяя транзакцию, создающую внешний ключ к заблокированной таблице.&lt;/p&gt;&#xA;&lt;p&gt;Итак, что нам нужно сделать:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Найти ID заблокированной таблицы;&lt;/li&gt;&#xA;&lt;li&gt;Найти ID транзакции, которая зависла;&lt;/li&gt;&#xA;&lt;li&gt;Попытаться остановить её корректно, прервать в случае оказания сопротивления.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;Допустим, запрос заблокировал таблицу &amp;ldquo;mytable&amp;rdquo;. Получим её ID:&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Memo on Круг интересов</title><link>https://dstarod.github.io/tags/memo/</link><description>Recent content in Memo on Круг интересов</description><generator>Hugo</generator><language>ru-RU</language><lastBuildDate>Thu, 17 Aug 2017 00:00:00 +0300</lastBuildDate><atom:link href="https://dstarod.github.io/tags/memo/index.xml" rel="self" type="application/rss+xml"/><item><title>Создание валидной цепочки SSL сертификатов</title><link>https://dstarod.github.io/fake-ssl-cert-chain/</link><pubDate>Thu, 17 Aug 2017 00:00:00 +0300</pubDate><guid>https://dstarod.github.io/fake-ssl-cert-chain/</guid><description>&lt;p>Для написания тестов на валидность загружаемых сертификатов мне потребовалось создать несколько вариантов
+цепочек и приватных ключей. Прошерстив некоторый объем интернета, я собрал всю необходимую информацию о том,
+как локально сгенерировать корректную цепочку SSL сертификатов, которая будет проходить проверку стандартными
+средствами.&lt;/p>
+&lt;p>Чтобы не писать кучу команд всякий раз, напишем bash-скрипт. Для начала, зададим несколько настроечных констант:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>CSR_FILE&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;csrfile.csr&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>KEY_BITS&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">2048&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>CONF_DIR&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;conf&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>CHAIN_CRT&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;ca_chain.crt&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Затем пара функций для подготовки и последующей подчистки каталога с настройками:&lt;/p></description></item><item><title>Удобные команды и алиасы для GIT</title><link>https://dstarod.github.io/git-tricks-and-aliases-with-fish/</link><pubDate>Thu, 27 Jul 2017 00:00:00 +0300</pubDate><guid>https://dstarod.github.io/git-tricks-and-aliases-with-fish/</guid><description>&lt;p>Несколько удобных алиасов для git, чтобы не потерять, положу это здесь.
+Я использую оболочку &lt;a href="https://fishshell.com/">fish&lt;/a>, поэтому возможно какие-то команды потребуется адаптировать для вашей.
+Шикарный набор советов &lt;a href="https://github.com/git-tips/tips">здесь&lt;/a>.&lt;/p>
+&lt;p>Лог в виде дерева:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">function&lt;/span> gl
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> git log --oneline --decorate --graph --all
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>end
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Интерактивный rebase с указанного в аргументах коммита:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">function&lt;/span> gri
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> git rebase -i $argv
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>end
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Перезапись локальной ветки свежей веткой с origin:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">function&lt;/span> grho
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> git fetch origin &lt;span style="color:#f92672">(&lt;/span>gb&lt;span style="color:#f92672">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> git reset --hard FETCH_HEAD
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>end
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Имя текущей ветки:&lt;/p></description></item><item><title>Плагин для Sublime Text своими руками</title><link>https://dstarod.github.io/sublime-plugin-dict-to-json/</link><pubDate>Thu, 13 Apr 2017 00:00:00 +0300</pubDate><guid>https://dstarod.github.io/sublime-plugin-dict-to-json/</guid><description>&lt;p>Не секрет, что одним из самых популярных редакторов кода у разработчиков на сегодняшний день
+является &lt;a href="https://www.sublimetext.com/">Sublime Text&lt;/a>. Кроме своих индивидуальных киллер-фич,
+которые вскоре стали копировать разработчики других продуктов той-же ниши
+(например, мультиредактирование), он хорош своей расширяемостью плагинами, коих великое множество на любой вкус. Думаю, не последней причиной такого их количества является простота создания. Для примера возьмем и напишем полезный инструмент, который будет брать как попало отформатированный Python-словарь и выдавать JSON стройными рядами.&lt;/p></description></item><item><title>Как остановить зависшую транзакцию в PostgreSQL</title><link>https://dstarod.github.io/terminate-transaction-lock-postgres/</link><pubDate>Mon, 09 Jan 2017 00:00:00 +0300</pubDate><guid>https://dstarod.github.io/terminate-transaction-lock-postgres/</guid><description>&lt;p>Сегодня PostgreSQL является одной из самых популярных СУБД, и, судя по новостям, многие крупные конторы переходят на ее использование
+с коммерческих продуктов признанных лидеров софтверного фронта. Поэтому думаю, что пошаговое решение ситуации с остановкой зависшей
+транзакции будет полезно многим. Я столкнулся с таковой, применяя транзакцию, создающую внешний ключ к заблокированной таблице.&lt;/p>
+&lt;p>Итак, что нам нужно сделать:&lt;/p>
+&lt;ol>
+&lt;li>Найти ID заблокированной таблицы;&lt;/li>
+&lt;li>Найти ID транзакции, которая зависла;&lt;/li>
+&lt;li>Попытаться остановить её корректно, прервать в случае оказания сопротивления.&lt;/li>
+&lt;/ol>
+&lt;p>Допустим, запрос заблокировал таблицу &amp;ldquo;mytable&amp;rdquo;. Получим её ID:&lt;/p></description></item></channel></rss>

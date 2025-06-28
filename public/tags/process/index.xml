@@ -1,19 +1,6 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Process on Круг интересов</title>
-    <link>https://dstarod.github.io/tags/process/</link>
-    <description>Recent content in Process on Круг интересов</description>
-    <generator>Hugo</generator>
-    <language>ru-RU</language>
-    <lastBuildDate>Thu, 01 Sep 2016 00:00:00 +0300</lastBuildDate>
-    <atom:link href="https://dstarod.github.io/tags/process/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Python и пляски с процессами</title>
-      <link>https://dstarod.github.io/python-grandchilds/</link>
-      <pubDate>Thu, 01 Sep 2016 00:00:00 +0300</pubDate>
-      <guid>https://dstarod.github.io/python-grandchilds/</guid>
-      <description>&lt;p&gt;Про использование нескольких процессов в Python уже написано невообразимое множество статей, хороших и не очень;&#xA;сломано немало копий в обсуждении проблемы GIL и псевдопотоков. Я же просто хочу рассказать о том, как решалась&#xA;задача с управлением небольшого дерева дочерних процессов.&lt;/p&gt;&#xA;&lt;p&gt;Итак, исходная ситуация. Основной процесс запускает два дочерних, используя &lt;code&gt;multiprocessing.Process&lt;/code&gt;, передает туда&#xA;очередь &lt;code&gt;multiprocessing.Queue&lt;/code&gt;. Первый дочерний процесс просто собирает какие-то данные и пишет в очередь,&#xA;второй же запускает еще несколько процессов, куда передает ту-же очередь, с которой они и работают.&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Process on Круг интересов</title><link>https://dstarod.github.io/tags/process/</link><description>Recent content in Process on Круг интересов</description><generator>Hugo</generator><language>ru-RU</language><lastBuildDate>Thu, 01 Sep 2016 00:00:00 +0300</lastBuildDate><atom:link href="https://dstarod.github.io/tags/process/index.xml" rel="self" type="application/rss+xml"/><item><title>Python и пляски с процессами</title><link>https://dstarod.github.io/python-grandchilds/</link><pubDate>Thu, 01 Sep 2016 00:00:00 +0300</pubDate><guid>https://dstarod.github.io/python-grandchilds/</guid><description>&lt;p>Про использование нескольких процессов в Python уже написано невообразимое множество статей, хороших и не очень;
+сломано немало копий в обсуждении проблемы GIL и псевдопотоков. Я же просто хочу рассказать о том, как решалась
+задача с управлением небольшого дерева дочерних процессов.&lt;/p>
+&lt;p>Итак, исходная ситуация. Основной процесс запускает два дочерних, используя &lt;code>multiprocessing.Process&lt;/code>, передает туда
+очередь &lt;code>multiprocessing.Queue&lt;/code>. Первый дочерний процесс просто собирает какие-то данные и пишет в очередь,
+второй же запускает еще несколько процессов, куда передает ту-же очередь, с которой они и работают.&lt;/p></description></item></channel></rss>
