@@ -1,4 +1,5 @@
-baseURL = 'https://dstarod.github.io/'
+baseURL = '/'
+relativeURLs = true
 languageCode = 'ru-RU'
 title = 'Круг интересов'
 theme = 'beautiful_hugo'
