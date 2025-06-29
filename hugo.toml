@@ -1,4 +1,4 @@
-baseURL = 'https://dstarod.github.io/'
+baseURL = '/'
 languageCode = 'ru-RU'
 title = 'Круг интересов'
 theme = 'beautiful_hugo'
@@ -10,7 +10,7 @@ description = 'В основном тут про IT'
 
 [permalinks]
   [permalinks.page]
-    posts = "/posts/:year/:month/:slug/"
+    posts = "/posts/:slug/"
     page = "/:slug/"
 
 [markup]
