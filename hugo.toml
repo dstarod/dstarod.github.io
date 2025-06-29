@@ -10,7 +10,8 @@ description = 'В основном тут про IT'
 
 [permalinks]
   [permalinks.page]
-    posts = '/:slug/'
+    posts = "/posts/:year/:month/:slug/"
+    page = "/:slug/"
 
 [markup]
   [markup.highlight]
