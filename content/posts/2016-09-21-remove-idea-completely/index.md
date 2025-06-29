@@ -1,11 +1,11 @@
 ---
-title: Полное удаление Intellij IDEA или Вечный Триал
-tags:
-- apps
-- hack
-date: 2016-09-21 00:00:00+03:00
-slug: remove-idea-completely
+date: 2016-09-21T00:00:00+03:00
 draft: false
+slug: remove-idea-completely
+tags:
+    - apps
+    - hack
+title: Полное удаление Intellij IDEA или Вечный Триал
 ---
 
 Одна из самых шикарных IDE для full-stack разработки - Intellij IDEA. Community версия бесплатна, и для разработки на Java/Android ее хватит за глаза.

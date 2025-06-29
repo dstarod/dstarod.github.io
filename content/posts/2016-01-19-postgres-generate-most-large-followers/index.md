@@ -1,10 +1,10 @@
 ---
-title: 'Postgres: generate the most large followers intersections'
-slug: postgres-generate-most-large-followers
-date: 2016-01-19 00:00:00+03:00
-tags:
-- postgresql
+date: 2016-01-19T00:00:00+03:00
 draft: false
+slug: postgres-generate-most-large-followers
+tags:
+    - postgresql
+title: 'Postgres: generate the most large followers intersections'
 ---
 
 Задача: получить список пользователей твиттера, с которыми у одного из них есть общие фоловеры, и отсортировать по их количеству. Лучше всего продемонстрировать на примере. Создадим таблицу с идентификаторами пользователей и фоловеров:

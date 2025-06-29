@@ -1,10 +1,10 @@
 ---
-title: Удобные команды и алиасы для GIT
-tags:
-- memo
-date: 2017-07-27 00:00:00+03:00
-slug: git-tricks-and-aliases-with-fish
+date: 2017-07-27T00:00:00+03:00
 draft: false
+slug: git-tricks-and-aliases-with-fish
+tags:
+    - memo
+title: Удобные команды и алиасы для GIT
 ---
 
 Несколько удобных алиасов для git, чтобы не потерять, положу это здесь.

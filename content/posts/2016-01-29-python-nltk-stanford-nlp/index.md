@@ -1,11 +1,11 @@
 ---
-title: Python NLTK + Stanford NLP
-slug: python-nltk-stanford-nlp
-date: 2016-01-29 00:00:00+03:00
-tags:
-- python
-- nlp
+date: 2016-01-29T00:00:00+03:00
 draft: false
+slug: python-nltk-stanford-nlp
+tags:
+    - python
+    - nlp
+title: Python NLTK + Stanford NLP
 ---
 
 Как известно, в Python стандартом работы с натуральным языком де-факто является NLTK. Несмотря на это, я довольно долго использовал Pattern от CLiPS из-за его простоты и скорости (многие отмечают тормознутость NLTK).

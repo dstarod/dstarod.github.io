@@ -1,10 +1,10 @@
 ---
-title: Плагин для Sublime Text своими руками
-date: 2017-04-13 00:00:00+03:00
-tags:
-- memo
-slug: sublime-plugin-dict-to-json
+date: 2017-04-13T00:00:00+03:00
 draft: false
+slug: sublime-plugin-dict-to-json
+tags:
+    - memo
+title: Плагин для Sublime Text своими руками
 ---
 
 Не секрет, что одним из самых популярных редакторов кода у разработчиков на сегодняшний день

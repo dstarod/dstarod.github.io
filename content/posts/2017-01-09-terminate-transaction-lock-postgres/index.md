@@ -1,11 +1,11 @@
 ---
-title: Как остановить зависшую транзакцию в PostgreSQL
-tags:
-- postgres
-- memo
-date: 2017-01-09 00:00:00+03:00
-slug: terminate-transaction-lock-postgres
+date: 2017-01-09T00:00:00+03:00
 draft: false
+slug: terminate-transaction-lock-postgres
+tags:
+    - postgres
+    - memo
+title: Как остановить зависшую транзакцию в PostgreSQL
 ---
 
 Сегодня PostgreSQL является одной из самых популярных СУБД, и, судя по новостям, многие крупные конторы переходят на ее использование

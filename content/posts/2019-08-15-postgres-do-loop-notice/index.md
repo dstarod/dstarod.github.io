@@ -1,10 +1,10 @@
 ---
-slug: postgres-do-loop-notice
-title: Использование цикла в PostgreSQL с выводом в консоль
-date: 2019-08-15 00:00:00+03:00
-tags:
-- postgresql
+date: 2019-08-15T00:00:00+03:00
 draft: false
+slug: postgres-do-loop-notice
+tags:
+    - postgresql
+title: Использование цикла в PostgreSQL с выводом в консоль
 ---
 
 Небольшая заметка на полях на будущее. Иногда в PostgreSQL нужно выполнить ряд повторяющихся действий с выводом результатов в лог.

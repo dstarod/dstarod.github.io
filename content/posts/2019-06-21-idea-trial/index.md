@@ -1,11 +1,11 @@
 ---
-title: Intellij IDEA - сброс триального периода
-tags:
-- apps
-- hack
-slug: idea-trial
-date: 2019-06-21 00:00:00+03:00
+date: 2019-06-21T00:00:00+03:00
 draft: false
+slug: idea-trial
+tags:
+    - apps
+    - hack
+title: Intellij IDEA - сброс триального периода
 ---
 
 Аж в 2016 году я тут писал о том, [как удалить Idea полностью](https://dstarod.github.io/remove-idea-completely/), чтобы начать все с начала.
