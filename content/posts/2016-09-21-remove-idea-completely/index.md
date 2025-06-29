@@ -1,7 +1,9 @@
 ---
 title: Полное удаление Intellij IDEA или Вечный Триал
-tags: [apps,hack]
-date: 2016-09-21T00:00:00+03:00
+tags:
+- apps
+- hack
+date: 2016-09-21 00:00:00+03:00
 slug: remove-idea-completely
 draft: false
 ---

@@ -13,10 +13,10 @@
 &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;</span></p><div class=post-entry><p>Для написания тестов на валидность загружаемых сертификатов мне потребовалось создать несколько вариантов
 цепочек и приватных ключей. Прошерстив некоторый объем интернета, я собрал всю необходимую информацию о том,
 как локально сгенерировать корректную цепочку SSL сертификатов, которая будет проходить проверку стандартными
-средствами.</p><p>Чтобы не писать кучу команд всякий раз, напишем bash-скрипт. Для начала, зададим несколько настроечных констант:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>CSR_FILE<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;csrfile.csr&#34;</span>
-</span></span><span style=display:flex><span>KEY_BITS<span style=color:#f92672>=</span><span style=color:#ae81ff>2048</span>
-</span></span><span style=display:flex><span>CONF_DIR<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;conf&#34;</span>
-</span></span><span style=display:flex><span>CHAIN_CRT<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;ca_chain.crt&#34;</span>
+средствами.</p><p>Чтобы не писать кучу команд всякий раз, напишем bash-скрипт. Для начала, зададим несколько настроечных констант:</p><div class=highlight><pre tabindex=0 style=color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#268bd2>CSR_FILE</span>=<span style=color:#2aa198>&#34;csrfile.csr&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#268bd2>KEY_BITS</span>=<span style=color:#2aa198;font-weight:700>2048</span>
+</span></span><span style=display:flex><span><span style=color:#268bd2>CONF_DIR</span>=<span style=color:#2aa198>&#34;conf&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#268bd2>CHAIN_CRT</span>=<span style=color:#2aa198>&#34;ca_chain.crt&#34;</span>
 </span></span></code></pre></div><p>Затем пара функций для подготовки и последующей подчистки каталога с настройками:</p><a href=https://dstarod.github.io/fake-ssl-cert-chain/ class=post-read-more>[Далее]</a></div><div class=blog-tags><a href=https://dstarod.github.io/tags/ssl/>ssl</a>&nbsp;
 <a href=https://dstarod.github.io/tags/memo/>memo</a>&nbsp;
 <a href=https://dstarod.github.io/tags/python/>python</a>&nbsp;</div></article><article class=post-preview><a href=https://dstarod.github.io/python-grandchilds/><h2 class=post-title>Python и пляски с процессами</h2></a><p class=post-meta><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Опубликовано 01.09.2016

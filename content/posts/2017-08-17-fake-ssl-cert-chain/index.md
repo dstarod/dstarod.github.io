@@ -1,8 +1,11 @@
 ---
-title: Создание валидной цепочки SSL сертификатов 
-tags: [ssl,memo,python]
+title: Создание валидной цепочки SSL сертификатов
+tags:
+- ssl
+- memo
+- python
 slug: fake-ssl-cert-chain
-date: 2017-08-17T00:00:00+03:00
+date: 2017-08-17 00:00:00+03:00
 draft: false
 ---
 

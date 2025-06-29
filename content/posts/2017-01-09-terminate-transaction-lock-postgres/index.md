@@ -1,7 +1,9 @@
 ---
 title: Как остановить зависшую транзакцию в PostgreSQL
-tags: [postgres,memo]
-date: 2017-01-09T00:00:00+03:00
+tags:
+- postgres
+- memo
+date: 2017-01-09 00:00:00+03:00
 slug: terminate-transaction-lock-postgres
 draft: false
 ---

@@ -3,24 +3,24 @@
 как локально сгенерировать корректную цепочку SSL сертификатов, которая будет проходить проверку стандартными
 средствами.&lt;/p>
 &lt;p>Чтобы не писать кучу команд всякий раз, напишем bash-скрипт. Для начала, зададим несколько настроечных констант:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>CSR_FILE&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;csrfile.csr&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>KEY_BITS&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">2048&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>CONF_DIR&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;conf&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>CHAIN_CRT&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;ca_chain.crt&amp;#34;&lt;/span>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">CSR_FILE&lt;/span>=&lt;span style="color:#2aa198">&amp;#34;csrfile.csr&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">KEY_BITS&lt;/span>=&lt;span style="color:#2aa198;font-weight:bold">2048&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">CONF_DIR&lt;/span>=&lt;span style="color:#2aa198">&amp;#34;conf&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">CHAIN_CRT&lt;/span>=&lt;span style="color:#2aa198">&amp;#34;ca_chain.crt&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Затем пара функций для подготовки и последующей подчистки каталога с настройками:&lt;/p></description></item><item><title>Удобные команды и алиасы для GIT</title><link>https://dstarod.github.io/git-tricks-and-aliases-with-fish/</link><pubDate>Thu, 27 Jul 2017 00:00:00 +0300</pubDate><guid>https://dstarod.github.io/git-tricks-and-aliases-with-fish/</guid><description>&lt;p>Несколько удобных алиасов для git, чтобы не потерять, положу это здесь.
 Я использую оболочку &lt;a href="https://fishshell.com/">fish&lt;/a>, поэтому возможно какие-то команды потребуется адаптировать для вашей.
 Шикарный набор советов &lt;a href="https://github.com/git-tips/tips">здесь&lt;/a>.&lt;/p>
 &lt;p>Лог в виде дерева:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">function&lt;/span> gl
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#859900">function&lt;/span> gl
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> git log --oneline --decorate --graph --all
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>end
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Интерактивный rebase с указанного в аргументах коммита:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">function&lt;/span> gri
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> git rebase -i $argv
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#859900">function&lt;/span> gri
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> git rebase -i &lt;span style="color:#268bd2">$argv&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>end
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Перезапись локальной ветки свежей веткой с origin:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">function&lt;/span> grho
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> git fetch origin &lt;span style="color:#f92672">(&lt;/span>gb&lt;span style="color:#f92672">)&lt;/span>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#859900">function&lt;/span> grho
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> git fetch origin (gb)
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> git reset --hard FETCH_HEAD
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>end
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Имя текущей ветки:&lt;/p></description></item><item><title>Плагин для Sublime Text своими руками</title><link>https://dstarod.github.io/sublime-plugin-dict-to-json/</link><pubDate>Thu, 13 Apr 2017 00:00:00 +0300</pubDate><guid>https://dstarod.github.io/sublime-plugin-dict-to-json/</guid><description>&lt;p>Не секрет, что одним из самых популярных редакторов кода у разработчиков на сегодняшний день

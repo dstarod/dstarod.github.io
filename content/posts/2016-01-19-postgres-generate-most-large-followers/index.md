@@ -1,8 +1,9 @@
 ---
-title: "Postgres: generate the most large followers intersections"
+title: 'Postgres: generate the most large followers intersections'
 slug: postgres-generate-most-large-followers
-date: 2016-01-19T00:00:00+03:00
-tags: [postgresql]
+date: 2016-01-19 00:00:00+03:00
+tags:
+- postgresql
 draft: false
 ---
 
@@ -17,7 +18,6 @@ INSERT INTO f(uid, fid) VALUES
     (4, 13), (4, 14), (4, 10), (4, 11)
 ;
 ```
-
 
 А вот собственно и запрос, интересуют пересечения с пользователем 2, самые большие сверху.
 

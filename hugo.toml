@@ -11,3 +11,7 @@ description = 'В основном тут про IT'
 [permalinks]
   [permalinks.page]
     posts = '/:slug/'
+
+[markup]
+  [markup.highlight]
+    style = 'solarized-light'

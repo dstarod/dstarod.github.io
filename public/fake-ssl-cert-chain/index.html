@@ -31,124 +31,124 @@ CHAIN_CRT="ca_chain.crt"
 <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button><div class=pswp__caption><div class=pswp__caption__center></div></div></div></div></div><header class=header-section><div class="intro-header no-img"><div class=container><div class=row><div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><div class=posts-heading><h1>Создание валидной цепочки SSL сертификатов</h1><hr class=small></div></div></div></div></div></header><div class=container role=main><div class=row><div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><article role=main class=blog-post><p>Для написания тестов на валидность загружаемых сертификатов мне потребовалось создать несколько вариантов
 цепочек и приватных ключей. Прошерстив некоторый объем интернета, я собрал всю необходимую информацию о том,
 как локально сгенерировать корректную цепочку SSL сертификатов, которая будет проходить проверку стандартными
-средствами.</p><p>Чтобы не писать кучу команд всякий раз, напишем bash-скрипт. Для начала, зададим несколько настроечных констант:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>CSR_FILE<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;csrfile.csr&#34;</span>
-</span></span><span style=display:flex><span>KEY_BITS<span style=color:#f92672>=</span><span style=color:#ae81ff>2048</span>
-</span></span><span style=display:flex><span>CONF_DIR<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;conf&#34;</span>
-</span></span><span style=display:flex><span>CHAIN_CRT<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;ca_chain.crt&#34;</span>
-</span></span></code></pre></div><p>Затем пара функций для подготовки и последующей подчистки каталога с настройками:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#66d9ef>function</span> clean <span style=color:#f92672>{</span>
-</span></span><span style=display:flex><span>    find conf -not -name <span style=color:#e6db74>&#39;*.cnf&#39;</span> -type f -delete
-</span></span><span style=display:flex><span>    rm -f $CSR_FILE $CHAIN_CRT
-</span></span><span style=display:flex><span><span style=color:#f92672>}</span>
+средствами.</p><p>Чтобы не писать кучу команд всякий раз, напишем bash-скрипт. Для начала, зададим несколько настроечных констант:</p><div class=highlight><pre tabindex=0 style=color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#268bd2>CSR_FILE</span>=<span style=color:#2aa198>&#34;csrfile.csr&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#268bd2>KEY_BITS</span>=<span style=color:#2aa198;font-weight:700>2048</span>
+</span></span><span style=display:flex><span><span style=color:#268bd2>CONF_DIR</span>=<span style=color:#2aa198>&#34;conf&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#268bd2>CHAIN_CRT</span>=<span style=color:#2aa198>&#34;ca_chain.crt&#34;</span>
+</span></span></code></pre></div><p>Затем пара функций для подготовки и последующей подчистки каталога с настройками:</p><div class=highlight><pre tabindex=0 style=color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#859900>function</span> clean {
+</span></span><span style=display:flex><span>    find conf -not -name <span style=color:#2aa198>&#39;*.cnf&#39;</span> -type f -delete
+</span></span><span style=display:flex><span>    rm -f <span style=color:#268bd2>$CSR_FILE</span> <span style=color:#268bd2>$CHAIN_CRT</span>
+</span></span><span style=display:flex><span>}
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>function</span> prepare <span style=color:#f92672>{</span>
+</span></span><span style=display:flex><span><span style=color:#859900>function</span> prepare {
 </span></span><span style=display:flex><span>    clean
-</span></span><span style=display:flex><span>    echo <span style=color:#ae81ff>1000</span> &gt; <span style=color:#e6db74>&#34;</span>$CONF_DIR<span style=color:#e6db74>/root_serial&#34;</span>
-</span></span><span style=display:flex><span>    cp /dev/null <span style=color:#e6db74>&#34;</span>$CONF_DIR<span style=color:#e6db74>/root_index.txt&#34;</span>
-</span></span><span style=display:flex><span>    echo <span style=color:#ae81ff>2000</span> &gt; <span style=color:#e6db74>&#34;</span>$CONF_DIR<span style=color:#e6db74>/im_serial&#34;</span>
-</span></span><span style=display:flex><span>    cp /dev/null <span style=color:#e6db74>&#34;</span>$CONF_DIR<span style=color:#e6db74>/im_index.txt&#34;</span>
-</span></span><span style=display:flex><span><span style=color:#f92672>}</span>
+</span></span><span style=display:flex><span>    <span style=color:#cb4b16>echo</span> <span style=color:#2aa198;font-weight:700>1000</span> &gt; <span style=color:#2aa198>&#34;</span><span style=color:#268bd2>$CONF_DIR</span><span style=color:#2aa198>/root_serial&#34;</span>
+</span></span><span style=display:flex><span>    cp /dev/null <span style=color:#2aa198>&#34;</span><span style=color:#268bd2>$CONF_DIR</span><span style=color:#2aa198>/root_index.txt&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#cb4b16>echo</span> <span style=color:#2aa198;font-weight:700>2000</span> &gt; <span style=color:#2aa198>&#34;</span><span style=color:#268bd2>$CONF_DIR</span><span style=color:#2aa198>/im_serial&#34;</span>
+</span></span><span style=display:flex><span>    cp /dev/null <span style=color:#2aa198>&#34;</span><span style=color:#268bd2>$CONF_DIR</span><span style=color:#2aa198>/im_index.txt&#34;</span>
+</span></span><span style=display:flex><span>}
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>prepare
-</span></span></code></pre></div><p>Все готово к созданию фальшивой, но технически корректной пары корневой сертификат / приватный ключ:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>ROOT_URL<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;mycorp.com&#34;</span>
-</span></span><span style=display:flex><span>ROOT_ORG<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;MYCORP&#34;</span>
-</span></span><span style=display:flex><span>ROOT_CNF<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;</span>$CONF_DIR<span style=color:#e6db74>/root_openssl.cnf&#34;</span>
-</span></span><span style=display:flex><span>ROOT_CRT<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;root.crt&#34;</span>
-</span></span><span style=display:flex><span>ROOT_KEY<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;root.key&#34;</span>
-</span></span><span style=display:flex><span>ROOT_EXP<span style=color:#f92672>=</span><span style=color:#ae81ff>5000</span>
-</span></span><span style=display:flex><span>ROOT_SUB<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;/C=RU/ST=Moscow/L=Moscow/O=</span>$ROOT_ORG<span style=color:#e6db74>/CN=</span>$ROOT_URL<span style=color:#e6db74>&#34;</span>
+</span></span></code></pre></div><p>Все готово к созданию фальшивой, но технически корректной пары корневой сертификат / приватный ключ:</p><div class=highlight><pre tabindex=0 style=color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#268bd2>ROOT_URL</span>=<span style=color:#2aa198>&#34;mycorp.com&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#268bd2>ROOT_ORG</span>=<span style=color:#2aa198>&#34;MYCORP&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#268bd2>ROOT_CNF</span>=<span style=color:#2aa198>&#34;</span><span style=color:#268bd2>$CONF_DIR</span><span style=color:#2aa198>/root_openssl.cnf&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#268bd2>ROOT_CRT</span>=<span style=color:#2aa198>&#34;root.crt&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#268bd2>ROOT_KEY</span>=<span style=color:#2aa198>&#34;root.key&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#268bd2>ROOT_EXP</span>=<span style=color:#2aa198;font-weight:700>5000</span>
+</span></span><span style=display:flex><span><span style=color:#268bd2>ROOT_SUB</span>=<span style=color:#2aa198>&#34;/C=RU/ST=Moscow/L=Moscow/O=</span><span style=color:#268bd2>$ROOT_ORG</span><span style=color:#2aa198>/CN=</span><span style=color:#268bd2>$ROOT_URL</span><span style=color:#2aa198>&#34;</span>
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e># Generate root key</span>
-</span></span><span style=display:flex><span>openssl genrsa -out $ROOT_KEY $KEY_BITS
-</span></span><span style=display:flex><span><span style=color:#75715e># Generate root certificate</span>
-</span></span><span style=display:flex><span>openssl req -config $ROOT_CNF -new -x509 -sha256 -extensions v3_ca <span style=color:#ae81ff>\
-</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>    -key $ROOT_KEY -out $ROOT_CRT -days $ROOT_EXP -subj $ROOT_SUB
-</span></span><span style=display:flex><span><span style=color:#75715e># Verify root certificate</span>
-</span></span><span style=display:flex><span>openssl x509 -noout -text -in $ROOT_CRT
-</span></span></code></pre></div><p>Хорошо, теперь создадим промежуточный сертификат с ключом:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>IM_CRT<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;intermediate.crt&#34;</span>
-</span></span><span style=display:flex><span>IM_KEY<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;intermediate.key&#34;</span>
-</span></span><span style=display:flex><span>IM_CNF<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;</span>$CONF_DIR<span style=color:#e6db74>/im_openssl.cnf&#34;</span>
-</span></span><span style=display:flex><span>IM_EXP<span style=color:#f92672>=</span><span style=color:#ae81ff>4000</span>
-</span></span><span style=display:flex><span>IM_SUB<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;/C=RU/ST=Moscow/L=Moscow/O=</span><span style=color:#e6db74>${</span>ROOT_ORG<span style=color:#e6db74>}</span><span style=color:#e6db74>/CN=department.</span><span style=color:#e6db74>${</span>ROOT_URL<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#93a1a1;font-style:italic># Generate root key</span>
+</span></span><span style=display:flex><span>openssl genrsa -out <span style=color:#268bd2>$ROOT_KEY</span> <span style=color:#268bd2>$KEY_BITS</span>
+</span></span><span style=display:flex><span><span style=color:#93a1a1;font-style:italic># Generate root certificate</span>
+</span></span><span style=display:flex><span>openssl req -config <span style=color:#268bd2>$ROOT_CNF</span> -new -x509 -sha256 -extensions v3_ca <span style=color:#2aa198>\
+</span></span></span><span style=display:flex><span><span style=color:#2aa198></span>    -key <span style=color:#268bd2>$ROOT_KEY</span> -out <span style=color:#268bd2>$ROOT_CRT</span> -days <span style=color:#268bd2>$ROOT_EXP</span> -subj <span style=color:#268bd2>$ROOT_SUB</span>
+</span></span><span style=display:flex><span><span style=color:#93a1a1;font-style:italic># Verify root certificate</span>
+</span></span><span style=display:flex><span>openssl x509 -noout -text -in <span style=color:#268bd2>$ROOT_CRT</span>
+</span></span></code></pre></div><p>Хорошо, теперь создадим промежуточный сертификат с ключом:</p><div class=highlight><pre tabindex=0 style=color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#268bd2>IM_CRT</span>=<span style=color:#2aa198>&#34;intermediate.crt&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#268bd2>IM_KEY</span>=<span style=color:#2aa198>&#34;intermediate.key&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#268bd2>IM_CNF</span>=<span style=color:#2aa198>&#34;</span><span style=color:#268bd2>$CONF_DIR</span><span style=color:#2aa198>/im_openssl.cnf&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#268bd2>IM_EXP</span>=<span style=color:#2aa198;font-weight:700>4000</span>
+</span></span><span style=display:flex><span><span style=color:#268bd2>IM_SUB</span>=<span style=color:#2aa198>&#34;/C=RU/ST=Moscow/L=Moscow/O=</span><span style=color:#2aa198>${</span><span style=color:#268bd2>ROOT_ORG</span><span style=color:#2aa198>}</span><span style=color:#2aa198>/CN=department.</span><span style=color:#2aa198>${</span><span style=color:#268bd2>ROOT_URL</span><span style=color:#2aa198>}</span><span style=color:#2aa198>&#34;</span>
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e># Generate intermediate key</span>
-</span></span><span style=display:flex><span>openssl genrsa -out $IM_KEY $KEY_BITS
-</span></span><span style=display:flex><span><span style=color:#75715e># Generate intermediate request</span>
-</span></span><span style=display:flex><span>openssl req -config $IM_CNF -new -key $IM_KEY -out $CSR_FILE -subj $IM_SUB
-</span></span><span style=display:flex><span><span style=color:#75715e># Generate intermediate certificate</span>
-</span></span><span style=display:flex><span>openssl ca <span style=color:#ae81ff>\
-</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>    -config $ROOT_CNF -batch <span style=color:#ae81ff>\
-</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>    -extensions v3_intermediate_ca -notext -md sha256 <span style=color:#ae81ff>\
-</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>    -days $IM_EXP -in $CSR_FILE -out $IM_CRT
-</span></span><span style=display:flex><span><span style=color:#75715e># Verify intermediate certificate</span>
-</span></span><span style=display:flex><span>openssl x509 -noout -text -in $IM_CRT
-</span></span><span style=display:flex><span>openssl verify -CAfile $ROOT_CRT $IM_CRT
+</span></span><span style=display:flex><span><span style=color:#93a1a1;font-style:italic># Generate intermediate key</span>
+</span></span><span style=display:flex><span>openssl genrsa -out <span style=color:#268bd2>$IM_KEY</span> <span style=color:#268bd2>$KEY_BITS</span>
+</span></span><span style=display:flex><span><span style=color:#93a1a1;font-style:italic># Generate intermediate request</span>
+</span></span><span style=display:flex><span>openssl req -config <span style=color:#268bd2>$IM_CNF</span> -new -key <span style=color:#268bd2>$IM_KEY</span> -out <span style=color:#268bd2>$CSR_FILE</span> -subj <span style=color:#268bd2>$IM_SUB</span>
+</span></span><span style=display:flex><span><span style=color:#93a1a1;font-style:italic># Generate intermediate certificate</span>
+</span></span><span style=display:flex><span>openssl ca <span style=color:#2aa198>\
+</span></span></span><span style=display:flex><span><span style=color:#2aa198></span>    -config <span style=color:#268bd2>$ROOT_CNF</span> -batch <span style=color:#2aa198>\
+</span></span></span><span style=display:flex><span><span style=color:#2aa198></span>    -extensions v3_intermediate_ca -notext -md sha256 <span style=color:#2aa198>\
+</span></span></span><span style=display:flex><span><span style=color:#2aa198></span>    -days <span style=color:#268bd2>$IM_EXP</span> -in <span style=color:#268bd2>$CSR_FILE</span> -out <span style=color:#268bd2>$IM_CRT</span>
+</span></span><span style=display:flex><span><span style=color:#93a1a1;font-style:italic># Verify intermediate certificate</span>
+</span></span><span style=display:flex><span>openssl x509 -noout -text -in <span style=color:#268bd2>$IM_CRT</span>
+</span></span><span style=display:flex><span>openssl verify -CAfile <span style=color:#268bd2>$ROOT_CRT</span> <span style=color:#268bd2>$IM_CRT</span>
 </span></span></code></pre></div><p>Обратите внимание, что команда на создание промежуточного сертификата берет конфигурацию
 корневого (<code>$ROOT_CNF</code>), т.е. подписывать будем им. Также важно, чтобы срок подписываемого
-был меньше срока подписывающего.</p><p>Ну а теперь, собственно, итог:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>SERVER_CRT<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;server.crt&#34;</span>
-</span></span><span style=display:flex><span>SERVER_KEY<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;server.key&#34;</span>
-</span></span><span style=display:flex><span>SERVER_EXP<span style=color:#f92672>=</span><span style=color:#ae81ff>365</span>
-</span></span><span style=display:flex><span>SERVER_SUB<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;/C=RU/ST=Moscow/L=Moscow/O=MYSERVER/CN=myserver.com&#34;</span>
+был меньше срока подписывающего.</p><p>Ну а теперь, собственно, итог:</p><div class=highlight><pre tabindex=0 style=color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#268bd2>SERVER_CRT</span>=<span style=color:#2aa198>&#34;server.crt&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#268bd2>SERVER_KEY</span>=<span style=color:#2aa198>&#34;server.key&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#268bd2>SERVER_EXP</span>=<span style=color:#2aa198;font-weight:700>365</span>
+</span></span><span style=display:flex><span><span style=color:#268bd2>SERVER_SUB</span>=<span style=color:#2aa198>&#34;/C=RU/ST=Moscow/L=Moscow/O=MYSERVER/CN=myserver.com&#34;</span>
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e># Generate key</span>
-</span></span><span style=display:flex><span>openssl genrsa -out $SERVER_KEY $KEY_BITS
-</span></span><span style=display:flex><span><span style=color:#75715e># Generate request</span>
-</span></span><span style=display:flex><span>openssl req <span style=color:#ae81ff>\
-</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>    -config $IM_CNF -key $SERVER_KEY -new -sha256 <span style=color:#ae81ff>\
-</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>    -out $CSR_FILE -subj $SERVER_SUB
-</span></span><span style=display:flex><span><span style=color:#75715e># Generate certificate</span>
-</span></span><span style=display:flex><span>openssl ca <span style=color:#ae81ff>\
-</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>    -batch <span style=color:#ae81ff>\
-</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>    -config $IM_CNF -days $SERVER_EXP <span style=color:#ae81ff>\
-</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>    -extensions server_cert <span style=color:#ae81ff>\
-</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>    -notext -md sha256 <span style=color:#ae81ff>\
-</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>    -in $CSR_FILE -out $SERVER_CRT
-</span></span><span style=display:flex><span><span style=color:#75715e># Verify certificate</span>
-</span></span><span style=display:flex><span>cat $IM_CRT $ROOT_CRT &gt; $CHAIN_CRT
-</span></span><span style=display:flex><span>openssl verify -CAfile $CHAIN_CRT $SERVER_CRT
+</span></span><span style=display:flex><span><span style=color:#93a1a1;font-style:italic># Generate key</span>
+</span></span><span style=display:flex><span>openssl genrsa -out <span style=color:#268bd2>$SERVER_KEY</span> <span style=color:#268bd2>$KEY_BITS</span>
+</span></span><span style=display:flex><span><span style=color:#93a1a1;font-style:italic># Generate request</span>
+</span></span><span style=display:flex><span>openssl req <span style=color:#2aa198>\
+</span></span></span><span style=display:flex><span><span style=color:#2aa198></span>    -config <span style=color:#268bd2>$IM_CNF</span> -key <span style=color:#268bd2>$SERVER_KEY</span> -new -sha256 <span style=color:#2aa198>\
+</span></span></span><span style=display:flex><span><span style=color:#2aa198></span>    -out <span style=color:#268bd2>$CSR_FILE</span> -subj <span style=color:#268bd2>$SERVER_SUB</span>
+</span></span><span style=display:flex><span><span style=color:#93a1a1;font-style:italic># Generate certificate</span>
+</span></span><span style=display:flex><span>openssl ca <span style=color:#2aa198>\
+</span></span></span><span style=display:flex><span><span style=color:#2aa198></span>    -batch <span style=color:#2aa198>\
+</span></span></span><span style=display:flex><span><span style=color:#2aa198></span>    -config <span style=color:#268bd2>$IM_CNF</span> -days <span style=color:#268bd2>$SERVER_EXP</span> <span style=color:#2aa198>\
+</span></span></span><span style=display:flex><span><span style=color:#2aa198></span>    -extensions server_cert <span style=color:#2aa198>\
+</span></span></span><span style=display:flex><span><span style=color:#2aa198></span>    -notext -md sha256 <span style=color:#2aa198>\
+</span></span></span><span style=display:flex><span><span style=color:#2aa198></span>    -in <span style=color:#268bd2>$CSR_FILE</span> -out <span style=color:#268bd2>$SERVER_CRT</span>
+</span></span><span style=display:flex><span><span style=color:#93a1a1;font-style:italic># Verify certificate</span>
+</span></span><span style=display:flex><span>cat <span style=color:#268bd2>$IM_CRT</span> <span style=color:#268bd2>$ROOT_CRT</span> &gt; <span style=color:#268bd2>$CHAIN_CRT</span>
+</span></span><span style=display:flex><span>openssl verify -CAfile <span style=color:#268bd2>$CHAIN_CRT</span> <span style=color:#268bd2>$SERVER_CRT</span>
 </span></span></code></pre></div><p>Обратите внимение, что проверка осуществляется с указанием не только промежуточного,
 но всех CA-сертификатов, предварительно собранных в один файл (<code>$CHAIN_CRT</code>).
 И файл запроса, и сертификат создаются с использованием конфигурации промежуточного сертификата.</p><p>Темным пятном тут осталось содержимое файлов конфигурации. Они очень похожи на стандартные конфигурации
 <code>openssl</code>, за исключением нескольких параметров, касающихся путей размещения служебных файлов и сертификатов для подписи.
-Вот эти параметры:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#f92672>[</span> CA_default <span style=color:#f92672>]</span>
-</span></span><span style=display:flex><span>dir               <span style=color:#f92672>=</span> conf
-</span></span><span style=display:flex><span>certs             <span style=color:#f92672>=</span> $dir
-</span></span><span style=display:flex><span>crl_dir           <span style=color:#f92672>=</span> $dir
-</span></span><span style=display:flex><span>new_certs_dir     <span style=color:#f92672>=</span> $dir
-</span></span></code></pre></div><p>Для корневого:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>database          <span style=color:#f92672>=</span> $dir/root_index.txt
-</span></span><span style=display:flex><span>serial            <span style=color:#f92672>=</span> $dir/root_serial
-</span></span><span style=display:flex><span>private_key       <span style=color:#f92672>=</span> $dir/../root.key
-</span></span><span style=display:flex><span>certificate       <span style=color:#f92672>=</span> $dir/../root.crt
-</span></span></code></pre></div><p>Для промежуточного:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>database          <span style=color:#f92672>=</span> $dir/im_index.txt
-</span></span><span style=display:flex><span>serial            <span style=color:#f92672>=</span> $dir/im_serial
-</span></span><span style=display:flex><span>private_key       <span style=color:#f92672>=</span> $dir/../intermediate.key
-</span></span><span style=display:flex><span>certificate       <span style=color:#f92672>=</span> $dir/../intermediate.crt
+Вот эти параметры:</p><div class=highlight><pre tabindex=0 style=color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>[ CA_default ]
+</span></span><span style=display:flex><span><span style=color:#268bd2>dir</span>               = conf
+</span></span><span style=display:flex><span><span style=color:#268bd2>certs</span>             = <span style=color:#268bd2>$dir</span>
+</span></span><span style=display:flex><span><span style=color:#268bd2>crl_dir</span>           = <span style=color:#268bd2>$dir</span>
+</span></span><span style=display:flex><span><span style=color:#268bd2>new_certs_dir</span>     = <span style=color:#268bd2>$dir</span>
+</span></span></code></pre></div><p>Для корневого:</p><div class=highlight><pre tabindex=0 style=color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#268bd2>database</span>          = <span style=color:#268bd2>$dir</span>/root_index.txt
+</span></span><span style=display:flex><span><span style=color:#268bd2>serial</span>            = <span style=color:#268bd2>$dir</span>/root_serial
+</span></span><span style=display:flex><span><span style=color:#268bd2>private_key</span>       = <span style=color:#268bd2>$dir</span>/../root.key
+</span></span><span style=display:flex><span><span style=color:#268bd2>certificate</span>       = <span style=color:#268bd2>$dir</span>/../root.crt
+</span></span></code></pre></div><p>Для промежуточного:</p><div class=highlight><pre tabindex=0 style=color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#268bd2>database</span>          = <span style=color:#268bd2>$dir</span>/im_index.txt
+</span></span><span style=display:flex><span><span style=color:#268bd2>serial</span>            = <span style=color:#268bd2>$dir</span>/im_serial
+</span></span><span style=display:flex><span><span style=color:#268bd2>private_key</span>       = <span style=color:#268bd2>$dir</span>/../intermediate.key
+</span></span><span style=display:flex><span><span style=color:#268bd2>certificate</span>       = <span style=color:#268bd2>$dir</span>/../intermediate.crt
 </span></span></code></pre></div><p>Строго говоря, проверка корректности уже была произведена в процессе создания.
 Но так как мне нужно было делать это в Python, я использовал
 библиотеку <a href=https://pyopenssl.org/en/stable/index.html>pyOpenSSL</a>, а именно
-модуль <a href=https://pyopenssl.org/en/stable/api/crypto.html>crypto</a>. Для примера покажу, как это можно сделать без затей:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>from</span> OpenSSL <span style=color:#f92672>import</span> crypto
+модуль <a href=https://pyopenssl.org/en/stable/api/crypto.html>crypto</a>. Для примера покажу, как это можно сделать без затей:</p><div class=highlight><pre tabindex=0 style=color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#dc322f;font-weight:700>from</span> <span style=color:#268bd2>OpenSSL</span> <span style=color:#dc322f;font-weight:700>import</span> <span style=color:#268bd2>crypto</span>
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e># Prepare X509 objects</span>
-</span></span><span style=display:flex><span>root_cert <span style=color:#f92672>=</span> crypto<span style=color:#f92672>.</span>load_certificate(
-</span></span><span style=display:flex><span>    crypto<span style=color:#f92672>.</span>FILETYPE_PEM, open(<span style=color:#e6db74>&#39;root.crt&#39;</span>)<span style=color:#f92672>.</span>read()
+</span></span><span style=display:flex><span><span style=color:#93a1a1;font-style:italic># Prepare X509 objects</span>
+</span></span><span style=display:flex><span><span style=color:#268bd2>root_cert</span> = <span style=color:#268bd2>crypto</span>.<span style=color:#268bd2>load_certificate</span>(
+</span></span><span style=display:flex><span>    <span style=color:#268bd2>crypto</span>.<span style=color:#268bd2>FILETYPE_PEM</span>, <span style=color:#cb4b16>open</span>(<span style=color:#2aa198>&#39;root.crt&#39;</span>).<span style=color:#268bd2>read</span>()
 </span></span><span style=display:flex><span>)
-</span></span><span style=display:flex><span>intermediate_cert <span style=color:#f92672>=</span> crypto<span style=color:#f92672>.</span>load_certificate(
-</span></span><span style=display:flex><span>    crypto<span style=color:#f92672>.</span>FILETYPE_PEM, open(<span style=color:#e6db74>&#39;intermediate.crt&#39;</span>)<span style=color:#f92672>.</span>read()
+</span></span><span style=display:flex><span><span style=color:#268bd2>intermediate_cert</span> = <span style=color:#268bd2>crypto</span>.<span style=color:#268bd2>load_certificate</span>(
+</span></span><span style=display:flex><span>    <span style=color:#268bd2>crypto</span>.<span style=color:#268bd2>FILETYPE_PEM</span>, <span style=color:#cb4b16>open</span>(<span style=color:#2aa198>&#39;intermediate.crt&#39;</span>).<span style=color:#268bd2>read</span>()
 </span></span><span style=display:flex><span>)
-</span></span><span style=display:flex><span>server_cert <span style=color:#f92672>=</span> crypto<span style=color:#f92672>.</span>load_certificate(
-</span></span><span style=display:flex><span>    crypto<span style=color:#f92672>.</span>FILETYPE_PEM, open(<span style=color:#e6db74>&#39;server.crt&#39;</span>)<span style=color:#f92672>.</span>read()
+</span></span><span style=display:flex><span><span style=color:#268bd2>server_cert</span> = <span style=color:#268bd2>crypto</span>.<span style=color:#268bd2>load_certificate</span>(
+</span></span><span style=display:flex><span>    <span style=color:#268bd2>crypto</span>.<span style=color:#268bd2>FILETYPE_PEM</span>, <span style=color:#cb4b16>open</span>(<span style=color:#2aa198>&#39;server.crt&#39;</span>).<span style=color:#268bd2>read</span>()
 </span></span><span style=display:flex><span>)
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e># Prepare X509 store</span>
-</span></span><span style=display:flex><span>store <span style=color:#f92672>=</span> crypto<span style=color:#f92672>.</span>X509Store()
-</span></span><span style=display:flex><span>store<span style=color:#f92672>.</span>add_cert(root_cert)
-</span></span><span style=display:flex><span>store<span style=color:#f92672>.</span>add_cert(intermediate_cert)
+</span></span><span style=display:flex><span><span style=color:#93a1a1;font-style:italic># Prepare X509 store</span>
+</span></span><span style=display:flex><span><span style=color:#268bd2>store</span> = <span style=color:#268bd2>crypto</span>.<span style=color:#268bd2>X509Store</span>()
+</span></span><span style=display:flex><span><span style=color:#268bd2>store</span>.<span style=color:#268bd2>add_cert</span>(<span style=color:#268bd2>root_cert</span>)
+</span></span><span style=display:flex><span><span style=color:#268bd2>store</span>.<span style=color:#268bd2>add_cert</span>(<span style=color:#268bd2>intermediate_cert</span>)
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e># Verify</span>
-</span></span><span style=display:flex><span>crypto<span style=color:#f92672>.</span>X509StoreContext(store, server_cert)<span style=color:#f92672>.</span>verify_certificate()
+</span></span><span style=display:flex><span><span style=color:#93a1a1;font-style:italic># Verify</span>
+</span></span><span style=display:flex><span><span style=color:#268bd2>crypto</span>.<span style=color:#268bd2>X509StoreContext</span>(<span style=color:#268bd2>store</span>, <span style=color:#268bd2>server_cert</span>).<span style=color:#268bd2>verify_certificate</span>()
 </span></span></code></pre></div><p>Для <code>X509Store</code> можно добавить
 <a href=https://pyopenssl.org/en/stable/api/crypto.html#OpenSSL.crypto.X509StoreFlags>флаги проверок</a>,
 которые все сломают. К примеру, если добавить вот такой флаг, то получим исключение
-<code>OpenSSL.crypto.X509StoreContextError</code>:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>store<span style=color:#f92672>.</span>set_flags(crypto<span style=color:#f92672>.</span>X509StoreFlags<span style=color:#f92672>.</span>CRL_CHECK)
+<code>OpenSSL.crypto.X509StoreContextError</code>:</p><div class=highlight><pre tabindex=0 style=color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#268bd2>store</span>.<span style=color:#268bd2>set_flags</span>(<span style=color:#268bd2>crypto</span>.<span style=color:#268bd2>X509StoreFlags</span>.<span style=color:#268bd2>CRL_CHECK</span>)
 </span></span></code></pre></div><p>А все потому, что будет предпринята попытка скачать CRL-файл, указанный в дополнениях сертификата,
 и эта попытка провалится. Как с этим бороться, как добавить <code>Issuer URL</code> и т.п. - это совсем другая история,
 которая в принципе вся решается через конфигурацию <code>openssl</code>.</p><p>Весь пример доступен на <a href=https://github.com/dstarod/fake-ssl-cert>github</a></p><div class=blog-tags><a href=https://dstarod.github.io/tags/ssl/>ssl</a>&nbsp;

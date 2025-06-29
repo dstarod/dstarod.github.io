@@ -1,7 +1,9 @@
 ---
 title: Python и пляски с процессами
-date: 2016-09-01T00:00:00+03:00
-tags: [python, process]
+date: 2016-09-01 00:00:00+03:00
+tags:
+- python
+- process
 slug: python-grandchilds
 draft: false
 ---

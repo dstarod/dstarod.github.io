@@ -1,8 +1,10 @@
 ---
 title: Intellij IDEA - сброс триального периода
-tags: [apps,hack]
+tags:
+- apps
+- hack
 slug: idea-trial
-date: 2019-06-21T00:00:00+03:00
+date: 2019-06-21 00:00:00+03:00
 draft: false
 ---
 

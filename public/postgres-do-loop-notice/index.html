@@ -52,24 +52,24 @@ END $$;
 <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button><div class=pswp__preloader><div class=pswp__preloader__icn><div class=pswp__preloader__cut><div class=pswp__preloader__donut></div></div></div></div></div><div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"><div class=pswp__share-tooltip></div></div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
 </button>
 <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button><div class=pswp__caption><div class=pswp__caption__center></div></div></div></div></div><header class=header-section><div class="intro-header no-img"><div class=container><div class=row><div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><div class=posts-heading><h1>Использование цикла в PostgreSQL с выводом в консоль</h1><hr class=small></div></div></div></div></div></header><div class=container role=main><div class=row><div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><article role=main class=blog-post><p>Небольшая заметка на полях на будущее. Иногда в PostgreSQL нужно выполнить ряд повторяющихся действий с выводом результатов в лог.
-Одним примером покажу, как это сделать легко и просто.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=display:flex><span><span style=color:#75715e>-- Делаем вывод сообщений в лог видимым
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>SET</span> client_min_messages <span style=color:#66d9ef>TO</span> notice;
+Одним примером покажу, как это сделать легко и просто.</p><div class=highlight><pre tabindex=0 style=color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=display:flex><span><span style=color:#93a1a1;font-style:italic>-- Делаем вывод сообщений в лог видимым
+</span></span></span><span style=display:flex><span><span style=color:#93a1a1;font-style:italic></span><span style=color:#859900>SET</span> <span style=color:#268bd2>client_min_messages</span> <span style=color:#859900>TO</span> <span style=color:#268bd2>notice</span>;
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>CREATE</span> TEMP <span style=color:#66d9ef>TABLE</span> tmp(id SERIAL, name TEXT);
+</span></span><span style=display:flex><span><span style=color:#859900>CREATE</span> <span style=color:#268bd2>TEMP</span> <span style=color:#859900>TABLE</span> <span style=color:#268bd2>tmp</span>(<span style=color:#268bd2>id</span> <span style=color:#cb4b16>SERIAL</span>, <span style=color:#268bd2>name</span> <span style=color:#cb4b16>TEXT</span>);
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e>-- Анонимный блок DO
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>DO</span> <span style=color:#960050;background-color:#1e0010>$$</span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>BEGIN</span>
-</span></span><span style=display:flex><span>    <span style=color:#75715e>-- Цикл LOOP
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    LOOP
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>INSERT</span> <span style=color:#66d9ef>INTO</span> tmp(name) <span style=color:#66d9ef>VALUES</span>(gen_random_uuid()::TEXT);
-</span></span><span style=display:flex><span>        <span style=color:#75715e>-- Условный оператор IF
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        <span style=color:#66d9ef>IF</span> (<span style=color:#66d9ef>SELECT</span> <span style=color:#66d9ef>MAX</span>(id) <span style=color:#66d9ef>FROM</span> tmp) <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>100</span> <span style=color:#66d9ef>THEN</span>
-</span></span><span style=display:flex><span>            RAISE NOTICE <span style=color:#e6db74>&#39;max id == %&#39;</span>, (<span style=color:#66d9ef>SELECT</span> <span style=color:#66d9ef>COUNT</span>(<span style=color:#f92672>*</span>) <span style=color:#66d9ef>FROM</span> tmp);
-</span></span><span style=display:flex><span>            EXIT;
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>END</span> <span style=color:#66d9ef>IF</span>;
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>END</span> LOOP;
-</span></span><span style=display:flex><span><span style=color:#66d9ef>END</span> <span style=color:#960050;background-color:#1e0010>$$</span>;
+</span></span><span style=display:flex><span><span style=color:#93a1a1;font-style:italic>-- Анонимный блок DO
+</span></span></span><span style=display:flex><span><span style=color:#93a1a1;font-style:italic></span><span style=color:#859900>DO</span> $$
+</span></span><span style=display:flex><span><span style=color:#859900>BEGIN</span>
+</span></span><span style=display:flex><span>    <span style=color:#93a1a1;font-style:italic>-- Цикл LOOP
+</span></span></span><span style=display:flex><span><span style=color:#93a1a1;font-style:italic></span>    <span style=color:#268bd2>LOOP</span>
+</span></span><span style=display:flex><span>        <span style=color:#859900>INSERT</span> <span style=color:#859900>INTO</span> <span style=color:#268bd2>tmp</span>(<span style=color:#268bd2>name</span>) <span style=color:#859900>VALUES</span>(<span style=color:#268bd2>gen_random_uuid</span>()::<span style=color:#cb4b16>TEXT</span>);
+</span></span><span style=display:flex><span>        <span style=color:#93a1a1;font-style:italic>-- Условный оператор IF
+</span></span></span><span style=display:flex><span><span style=color:#93a1a1;font-style:italic></span>        <span style=color:#859900>IF</span> (<span style=color:#859900>SELECT</span> <span style=color:#859900>MAX</span>(<span style=color:#268bd2>id</span>) <span style=color:#859900>FROM</span> <span style=color:#268bd2>tmp</span>) &gt; <span style=color:#2aa198;font-weight:700>100</span> <span style=color:#859900>THEN</span>
+</span></span><span style=display:flex><span>            <span style=color:#268bd2>RAISE</span> <span style=color:#268bd2>NOTICE</span> <span style=color:#2aa198>&#39;max id == %&#39;</span>, (<span style=color:#859900>SELECT</span> <span style=color:#859900>COUNT</span>(*) <span style=color:#859900>FROM</span> <span style=color:#268bd2>tmp</span>);
+</span></span><span style=display:flex><span>            <span style=color:#268bd2>EXIT</span>;
+</span></span><span style=display:flex><span>        <span style=color:#859900>END</span> <span style=color:#859900>IF</span>;
+</span></span><span style=display:flex><span>    <span style=color:#859900>END</span> <span style=color:#268bd2>LOOP</span>;
+</span></span><span style=display:flex><span><span style=color:#859900>END</span> $$;
 </span></span></code></pre></div><div class=blog-tags><a href=https://dstarod.github.io/tags/postgresql/>postgresql</a>&nbsp;</div></article><ul class="pager blog-pager"><li class=previous><a href=https://dstarod.github.io/idea-trial/ data-toggle=tooltip data-placement=top title="Intellij IDEA - сброс триального периода">&larr; Предыдущий</a></li></ul></div></div></div><footer><div class=container><div class=row><div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><ul class="list-inline text-center footer-links"></ul><p class="credits copyright text-muted">&nbsp;&bull;&nbsp;&copy;
 2019
 &nbsp;&bull;&nbsp;

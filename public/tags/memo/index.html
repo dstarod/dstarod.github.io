@@ -13,23 +13,23 @@
 &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;</span></p><div class=post-entry><p>Для написания тестов на валидность загружаемых сертификатов мне потребовалось создать несколько вариантов
 цепочек и приватных ключей. Прошерстив некоторый объем интернета, я собрал всю необходимую информацию о том,
 как локально сгенерировать корректную цепочку SSL сертификатов, которая будет проходить проверку стандартными
-средствами.</p><p>Чтобы не писать кучу команд всякий раз, напишем bash-скрипт. Для начала, зададим несколько настроечных констант:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>CSR_FILE<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;csrfile.csr&#34;</span>
-</span></span><span style=display:flex><span>KEY_BITS<span style=color:#f92672>=</span><span style=color:#ae81ff>2048</span>
-</span></span><span style=display:flex><span>CONF_DIR<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;conf&#34;</span>
-</span></span><span style=display:flex><span>CHAIN_CRT<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;ca_chain.crt&#34;</span>
+средствами.</p><p>Чтобы не писать кучу команд всякий раз, напишем bash-скрипт. Для начала, зададим несколько настроечных констант:</p><div class=highlight><pre tabindex=0 style=color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#268bd2>CSR_FILE</span>=<span style=color:#2aa198>&#34;csrfile.csr&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#268bd2>KEY_BITS</span>=<span style=color:#2aa198;font-weight:700>2048</span>
+</span></span><span style=display:flex><span><span style=color:#268bd2>CONF_DIR</span>=<span style=color:#2aa198>&#34;conf&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#268bd2>CHAIN_CRT</span>=<span style=color:#2aa198>&#34;ca_chain.crt&#34;</span>
 </span></span></code></pre></div><p>Затем пара функций для подготовки и последующей подчистки каталога с настройками:</p><a href=https://dstarod.github.io/fake-ssl-cert-chain/ class=post-read-more>[Далее]</a></div><div class=blog-tags><a href=https://dstarod.github.io/tags/ssl/>ssl</a>&nbsp;
 <a href=https://dstarod.github.io/tags/memo/>memo</a>&nbsp;
 <a href=https://dstarod.github.io/tags/python/>python</a>&nbsp;</div></article><article class=post-preview><a href=https://dstarod.github.io/git-tricks-and-aliases-with-fish/><h2 class=post-title>Удобные команды и алиасы для GIT</h2></a><p class=post-meta><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Опубликовано 27.07.2017
 &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;</span></p><div class=post-entry><p>Несколько удобных алиасов для git, чтобы не потерять, положу это здесь.
 Я использую оболочку <a href=https://fishshell.com/>fish</a>, поэтому возможно какие-то команды потребуется адаптировать для вашей.
-Шикарный набор советов <a href=https://github.com/git-tips/tips>здесь</a>.</p><p>Лог в виде дерева:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#66d9ef>function</span> gl
+Шикарный набор советов <a href=https://github.com/git-tips/tips>здесь</a>.</p><p>Лог в виде дерева:</p><div class=highlight><pre tabindex=0 style=color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#859900>function</span> gl
 </span></span><span style=display:flex><span>    git log --oneline --decorate --graph --all
 </span></span><span style=display:flex><span>end
-</span></span></code></pre></div><p>Интерактивный rebase с указанного в аргументах коммита:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#66d9ef>function</span> gri
-</span></span><span style=display:flex><span>    git rebase -i $argv
+</span></span></code></pre></div><p>Интерактивный rebase с указанного в аргументах коммита:</p><div class=highlight><pre tabindex=0 style=color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#859900>function</span> gri
+</span></span><span style=display:flex><span>    git rebase -i <span style=color:#268bd2>$argv</span>
 </span></span><span style=display:flex><span>end
-</span></span></code></pre></div><p>Перезапись локальной ветки свежей веткой с origin:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#66d9ef>function</span> grho
-</span></span><span style=display:flex><span>    git fetch origin <span style=color:#f92672>(</span>gb<span style=color:#f92672>)</span>
+</span></span></code></pre></div><p>Перезапись локальной ветки свежей веткой с origin:</p><div class=highlight><pre tabindex=0 style=color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#859900>function</span> grho
+</span></span><span style=display:flex><span>    git fetch origin (gb)
 </span></span><span style=display:flex><span>    git reset --hard FETCH_HEAD
 </span></span><span style=display:flex><span>end
 </span></span></code></pre></div><p>Имя текущей ветки:</p><a href=https://dstarod.github.io/git-tricks-and-aliases-with-fish/ class=post-read-more>[Далее]</a></div><div class=blog-tags><a href=https://dstarod.github.io/tags/memo/>memo</a>&nbsp;</div></article><article class=post-preview><a href=https://dstarod.github.io/sublime-plugin-dict-to-json/><h2 class=post-title>Плагин для Sublime Text своими руками</h2></a><p class=post-meta><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Опубликовано 13.04.2017

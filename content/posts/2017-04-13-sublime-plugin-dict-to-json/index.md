@@ -1,7 +1,8 @@
 ---
 title: Плагин для Sublime Text своими руками
-date: 2017-04-13T00:00:00+03:00
-tags: [memo]
+date: 2017-04-13 00:00:00+03:00
+tags:
+- memo
 slug: sublime-plugin-dict-to-json
 draft: false
 ---
