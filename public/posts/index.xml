@@ -28,7 +28,7 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#859900">END&lt;/span> &lt;span style="color:#859900">IF&lt;/span>;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#859900">END&lt;/span> &lt;span style="color:#268bd2">LOOP&lt;/span>;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#859900">END&lt;/span> $$;
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Intellij IDEA - сброс триального периода</title><link>/posts/idea-trial/</link><pubDate>Fri, 21 Jun 2019 00:00:00 +0300</pubDate><guid>/posts/idea-trial/</guid><description>&lt;p>Аж в 2016 году я тут писал о том, &lt;a href="https://dstarod.github.io/remove-idea-completely/">как удалить Idea полностью&lt;/a>, чтобы начать все с начала.
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Intellij IDEA - сброс триального периода</title><link>/posts/idea-trial/</link><pubDate>Fri, 21 Jun 2019 00:00:00 +0300</pubDate><guid>/posts/idea-trial/</guid><description>&lt;p>Аж в 2016 году я тут писал о том, &lt;a href="https://dstarod.github.io/posts/remove-idea-completely/">как удалить Idea полностью&lt;/a>, чтобы начать все с начала.
 Но времена меняются, и что работало раньше - не работает сейчас. Вот обновленный алгоритм для MacOS. Обратите внимание на версию Idea.&lt;/p>
 &lt;p>Удаляем файлы и каталоги:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cb4b16">cd&lt;/span> ~/Library/Preferences
