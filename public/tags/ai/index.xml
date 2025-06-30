@@ -1,19 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Ai on Круг интересов</title>
-    <link>/tags/ai/</link>
-    <description>Recent content in Ai on Круг интересов</description>
-    <generator>Hugo</generator>
-    <language>ru-RU</language>
-    <lastBuildDate>Sun, 29 Jun 2025 19:10:14 +0300</lastBuildDate>
-    <atom:link href="/tags/ai/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Консольный ИИ-агент Gemini CLI</title>
-      <link>/posts/gemini-cli-howto/</link>
-      <pubDate>Sun, 29 Jun 2025 19:10:14 +0300</pubDate>
-      <guid>/posts/gemini-cli-howto/</guid>
-      <description>&lt;p&gt;Gemini CLI - консольный ИИ-агент от Google. Работает с моделью &lt;code&gt;gemini-2.5-pro&lt;/code&gt;. Позволяет делать бесплатно 1000 запросов в день и дает контекстное окно в миллион токенов. Умеет работать с файловой системой на компьютере, делать запросы в интернете и пользоваться поисковиком Google.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Что немаловажно: работает в России.&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://developers.google.com/gemini-code-assist/docs/overview?hl=ru&#34;&gt;Обзорная статья от Google&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/google-gemini/gemini-cli&#34;&gt;Репозиторий на GitHub&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/google-gemini/gemini-cli/blob/main/docs/cli/commands.md&#34;&gt;Документация по командам и настройкам&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;установка&#34;&gt;Установка&lt;/h2&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;npm install -g @google/gemini-cli&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;подготовка-к-запуску&#34;&gt;Подготовка к запуску&lt;/h2&gt;&#xA;&lt;p&gt;Чтобы использовать агента бесплатно, есть несколько путей. Опишу использование варианта с аккаунтом в Google.&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ai on Круг интересов</title><link>/tags/ai/</link><description>Recent content in Ai on Круг интересов</description><generator>Hugo</generator><language>ru-RU</language><lastBuildDate>Sun, 29 Jun 2025 19:10:14 +0300</lastBuildDate><atom:link href="/tags/ai/index.xml" rel="self" type="application/rss+xml"/><item><title>Консольный ИИ-агент Gemini CLI</title><link>/posts/gemini-cli-howto/</link><pubDate>Sun, 29 Jun 2025 19:10:14 +0300</pubDate><guid>/posts/gemini-cli-howto/</guid><description>&lt;p>Gemini CLI - консольный ИИ-агент от Google. Работает с моделью &lt;code>gemini-2.5-pro&lt;/code>. Позволяет делать бесплатно 1000 запросов в день и дает контекстное окно в миллион токенов. Умеет работать с файловой системой на компьютере, делать запросы в интернете и пользоваться поисковиком Google.&lt;/p>
+&lt;p>&lt;strong>Что немаловажно: работает в России.&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://developers.google.com/gemini-code-assist/docs/overview?hl=ru">Обзорная статья от Google&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/google-gemini/gemini-cli">Репозиторий на GitHub&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/google-gemini/gemini-cli/blob/main/docs/cli/commands.md">Документация по командам и настройкам&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="установка">Установка&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>npm install -g @google/gemini-cli
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="подготовка-к-запуску">Подготовка к запуску&lt;/h2>
+&lt;p>Чтобы использовать агента бесплатно, есть несколько путей. Опишу использование варианта с аккаунтом в Google.&lt;/p></description></item></channel></rss>

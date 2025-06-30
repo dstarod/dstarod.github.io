@@ -1,19 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Sublime on Круг интересов</title>
-    <link>/tags/sublime/</link>
-    <description>Recent content in Sublime on Круг интересов</description>
-    <generator>Hugo</generator>
-    <language>ru-RU</language>
-    <lastBuildDate>Thu, 13 Apr 2017 00:00:00 +0300</lastBuildDate>
-    <atom:link href="/tags/sublime/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Плагин для Sublime Text своими руками</title>
-      <link>/posts/sublime-plugin-dict-to-json/</link>
-      <pubDate>Thu, 13 Apr 2017 00:00:00 +0300</pubDate>
-      <guid>/posts/sublime-plugin-dict-to-json/</guid>
-      <description>&lt;p&gt;Не секрет, что одним из самых популярных редакторов кода у разработчиков на сегодняшний день&#xA;является &lt;a href=&#34;https://www.sublimetext.com/&#34;&gt;Sublime Text&lt;/a&gt;. Кроме своих индивидуальных киллер-фич,&#xA;которые вскоре стали копировать разработчики других продуктов той-же ниши&#xA;(например, мультиредактирование), он хорош своей расширяемостью плагинами, коих великое множество на любой вкус. Думаю, не последней причиной такого их количества является простота создания. Для примера возьмем и напишем полезный инструмент, который будет брать как попало отформатированный Python-словарь и выдавать JSON стройными рядами.&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Sublime on Круг интересов</title><link>/tags/sublime/</link><description>Recent content in Sublime on Круг интересов</description><generator>Hugo</generator><language>ru-RU</language><lastBuildDate>Thu, 13 Apr 2017 00:00:00 +0300</lastBuildDate><atom:link href="/tags/sublime/index.xml" rel="self" type="application/rss+xml"/><item><title>Плагин для Sublime Text своими руками</title><link>/posts/sublime-plugin-dict-to-json/</link><pubDate>Thu, 13 Apr 2017 00:00:00 +0300</pubDate><guid>/posts/sublime-plugin-dict-to-json/</guid><description>&lt;p>Не секрет, что одним из самых популярных редакторов кода у разработчиков на сегодняшний день
+является &lt;a href="https://www.sublimetext.com/">Sublime Text&lt;/a>. Кроме своих индивидуальных киллер-фич,
+которые вскоре стали копировать разработчики других продуктов той-же ниши
+(например, мультиредактирование), он хорош своей расширяемостью плагинами, коих великое множество на любой вкус. Думаю, не последней причиной такого их количества является простота создания. Для примера возьмем и напишем полезный инструмент, который будет брать как попало отформатированный Python-словарь и выдавать JSON стройными рядами.&lt;/p></description></item></channel></rss>

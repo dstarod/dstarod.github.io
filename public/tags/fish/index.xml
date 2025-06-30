@@ -1,19 +1,17 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Fish on Круг интересов</title>
-    <link>/tags/fish/</link>
-    <description>Recent content in Fish on Круг интересов</description>
-    <generator>Hugo</generator>
-    <language>ru-RU</language>
-    <lastBuildDate>Thu, 27 Jul 2017 00:00:00 +0300</lastBuildDate>
-    <atom:link href="/tags/fish/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Удобные команды и алиасы для GIT</title>
-      <link>/posts/git-tricks-and-aliases-with-fish/</link>
-      <pubDate>Thu, 27 Jul 2017 00:00:00 +0300</pubDate>
-      <guid>/posts/git-tricks-and-aliases-with-fish/</guid>
-      <description>&lt;p&gt;Несколько удобных алиасов для git, чтобы не потерять, положу это здесь.&#xA;Я использую оболочку &lt;a href=&#34;https://fishshell.com/&#34;&gt;fish&lt;/a&gt;, поэтому возможно какие-то команды потребуется адаптировать для вашей.&#xA;Шикарный набор советов &lt;a href=&#34;https://github.com/git-tips/tips&#34;&gt;здесь&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Лог в виде дерева:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#859900&#34;&gt;function&lt;/span&gt; gl&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    git log --oneline --decorate --graph --all&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;end&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Интерактивный rebase с указанного в аргументах коммита:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#859900&#34;&gt;function&lt;/span&gt; gri&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    git rebase -i &lt;span style=&#34;color:#268bd2&#34;&gt;$argv&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;end&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Перезапись локальной ветки свежей веткой с origin:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#859900&#34;&gt;function&lt;/span&gt; grho&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    git fetch origin (gb)&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    git reset --hard FETCH_HEAD&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;end&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Имя текущей ветки:&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Fish on Круг интересов</title><link>/tags/fish/</link><description>Recent content in Fish on Круг интересов</description><generator>Hugo</generator><language>ru-RU</language><lastBuildDate>Thu, 27 Jul 2017 00:00:00 +0300</lastBuildDate><atom:link href="/tags/fish/index.xml" rel="self" type="application/rss+xml"/><item><title>Удобные команды и алиасы для GIT</title><link>/posts/git-tricks-and-aliases-with-fish/</link><pubDate>Thu, 27 Jul 2017 00:00:00 +0300</pubDate><guid>/posts/git-tricks-and-aliases-with-fish/</guid><description>&lt;p>Несколько удобных алиасов для git, чтобы не потерять, положу это здесь.
+Я использую оболочку &lt;a href="https://fishshell.com/">fish&lt;/a>, поэтому возможно какие-то команды потребуется адаптировать для вашей.
+Шикарный набор советов &lt;a href="https://github.com/git-tips/tips">здесь&lt;/a>.&lt;/p>
+&lt;p>Лог в виде дерева:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#859900">function&lt;/span> gl
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> git log --oneline --decorate --graph --all
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>end
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Интерактивный rebase с указанного в аргументах коммита:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#859900">function&lt;/span> gri
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> git rebase -i &lt;span style="color:#268bd2">$argv&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>end
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Перезапись локальной ветки свежей веткой с origin:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#859900">function&lt;/span> grho
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> git fetch origin (gb)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> git reset --hard FETCH_HEAD
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>end
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Имя текущей ветки:&lt;/p></description></item></channel></rss>
