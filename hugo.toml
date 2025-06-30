@@ -3,6 +3,7 @@ languageCode = 'ru-RU'
 title = 'Круг интересов'
 theme = 'beautiful_hugo'
 defaultContentLanguage = 'ru'
+enableRobotsTXT = 'true'
 
 [params]
 description = 'В основном тут про IT'

@@ -1,16 +1,344 @@
-<!doctype html><html lang=ru itemscope itemtype=http://schema.org/WebPage><head><script type=text/javascript>(function(e,t,n,s,o,i,a){e[o]=e[o]||function(){(e[o].a=e[o].a||[]).push(arguments)},e[o].l=1*new Date;for(var r=0;r<document.scripts.length;r++)if(document.scripts[r].src===s)return;i=t.createElement(n),a=t.getElementsByTagName(n)[0],i.async=1,i.src=s,a.parentNode.insertBefore(i,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym"),ym(103109520,"init",{clickmap:!0,trackLinks:!0,accurateTrackBounce:!0})</script><noscript><div><img src=https://mc.yandex.ru/watch/103109520 style=position:absolute;left:-9999px alt></div></noscript><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Превращаем заметки Obsidian в посты Hugo -</title><meta name=description content="Конвертация заметок Obsidian в посты для Hugo с использованием консольной утилиты obsidian2hugo"><script type=application/ld+json>{"@context":"http://schema.org","@type":"WebSite","name":"Круг интересов","url":"\/"}</script><script type=application/ld+json>{"@context":"http://schema.org","@type":"Organization","name":"","url":"\/"}</script><script type=application/ld+json>{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"\/","name":"home"}},{"@type":"ListItem","position":3,"item":{"@id":"\/posts\/obsidian2hugo\/","name":"Превращаем заметки obsidian в посты hugo"}}]}</script><script type=application/ld+json>{"@context":"http://schema.org","@type":"Article","author":{"name":""},"headline":"Превращаем заметки Obsidian в посты Hugo","description":"Конвертация заметок Obsidian в посты для Hugo с использованием консольной утилиты obsidian2hugo","inLanguage":"ru","wordCount":144,"datePublished":"2025-06-30T17:52:25\u002b03:00","dateModified":"2025-06-30T17:52:25\u002b03:00","image":"\/","keywords":["obsidian, hugo"],"mainEntityOfPage":"\/posts\/obsidian2hugo\/","publisher":{"@type":"Organization","name":"\/","logo":{"@type":"ImageObject","url":"\/","height":60,"width":60}}}</script><meta property="og:title" content="Превращаем заметки Obsidian в посты Hugo"><meta property="og:description" content="Конвертация заметок Obsidian в посты для Hugo с использованием консольной утилиты obsidian2hugo"><meta property="og:url" content="/posts/obsidian2hugo/"><meta property="og:type" content="website"><meta property="og:site_name" content="Круг интересов"><meta name=twitter:title content="Превращаем заметки Obsidian в посты Hugo"><meta name=twitter:description content="Конвертация заметок Obsidian в посты для Hugo с использованием консольной утилиты obsidian2hugo"><meta name=twitter:card content="summary_large_image"><meta name=generator content="Hugo 0.147.8"><link rel=alternate href=/index.xml type=application/rss+xml title="Круг интересов"><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css integrity=sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI crossorigin=anonymous><link rel=stylesheet href=https://use.fontawesome.com/releases/v6.6.0/css/all.css integrity=sha384-h/hnnw1Bi4nbpD6kE7nYfCXzovi622sY5WBxww8ARKwpdLj5kUWjRuyiXaD1U2JT crossorigin=anonymous><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css integrity=sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu crossorigin=anonymous><link rel=stylesheet href=/css/main.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic"><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"><link rel=stylesheet href=/css/syntax.css><link rel=stylesheet href=/css/codeblock.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css integrity=sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh crossorigin=anonymous><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css integrity=sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R crossorigin=anonymous></head><body><nav class="navbar navbar-default navbar-fixed-top navbar-custom"><div class=container-fluid><div class=navbar-header><button type=button class=navbar-toggle data-toggle=collapse data-target=#main-navbar>
-<span class=sr-only>Навигация</span>
-<span class=icon-bar></span>
-<span class=icon-bar></span>
-<span class=icon-bar></span>
-</button>
-<a class=navbar-brand href=/>Круг интересов</a></div><div class="collapse navbar-collapse" id=main-navbar><ul class="nav navbar-nav navbar-right"></ul></div></div></nav><div class=pswp tabindex=-1 role=dialog aria-hidden=true><div class=pswp__bg></div><div class=pswp__scroll-wrap><div class=pswp__container><div class=pswp__item></div><div class=pswp__item></div><div class=pswp__item></div></div><div class="pswp__ui pswp__ui--hidden"><div class=pswp__top-bar><div class=pswp__counter></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-<button class="pswp__button pswp__button--share" title=Share></button>
-<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button><div class=pswp__preloader><div class=pswp__preloader__icn><div class=pswp__preloader__cut><div class=pswp__preloader__donut></div></div></div></div></div><div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"><div class=pswp__share-tooltip></div></div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
-</button>
-<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button><div class=pswp__caption><div class=pswp__caption__center></div></div></div></div></div><header class=header-section><div class="intro-header no-img"><div class=container><div class=row><div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><div class=posts-heading><h1>Превращаем заметки Obsidian в посты Hugo</h1><hr class=small></div></div></div></div></div></header><div class=container role=main><div class=row><div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><article role=main class=blog-post><p>Когда решил вернуться к написанию постов в блог, решил перевести его на генерацию статических сайтов <a href=https://gohugo.io>Hugo</a>. А так как к тому моменту я успел полюбить <a href=https://obsidian.md>Obsidian</a>, то стал решать, как бы так сделать, чтобы писать статьи в нем, а в Hugo транслировать с нужными модификациями. Готовые решения меня не устроили (то одно не так то другое не то), решил сделать что-то свое.</p><p>Плагин для Obsidian не осилил (никогда не писал на TypeScript), поэтому с помощью ИИ накидал варианты на Python и Go. Скачать можно <a href=https://github.com/dstarod/obsidian2hugo>с моего GitHub</a>.</p><p>Ключевые штуки:</p><ul><li>формат постов - <a href=https://gohugo.io/content-management/page-bundles/>Page Bundles</a> согласно <a href="https://github.com/spech66/hugo-best-practices?tab=readme-ov-file#content-organization">лучших практик</a></li><li>встроенные изображения преобразуются в Markdown-ссылки</li><li>вики-ссылки преобразуются в простой текст</li></ul><p>При запуске указываются:</p><ul><li>путь к каталогу заметками</li><li>путь к каталогу вложений</li><li>путь к каталогу с постами</li><li>тег - признак, что заметка для блога</li><li>возможность убирать этот тег-признак из постов</li><li>cписок имен каталогов, которые нужно исключить из сканирования</li></ul><div class=blog-tags><a href=/tags/obsidian/>obsidian</a>&nbsp;
-<a href=/tags/hugo/>hugo</a>&nbsp;</div></article><ul class="pager blog-pager"><li class=previous><a href=/posts/gemini-cli-howto/ data-toggle=tooltip data-placement=top title="Консольный ИИ-агент Gemini CLI">&larr; Предыдущий</a></li></ul></div></div></div><footer><div class=container><div class=row><div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><ul class="list-inline text-center footer-links"></ul><p class="credits copyright text-muted">&nbsp;&bull;&nbsp;&copy;
-2025
-&nbsp;&bull;&nbsp;
-<a href=/>Круг интересов</a></p><p class="credits theme-by text-muted">На базе <a href=https://gohugo.io>Hugo v0.147.8</a> &nbsp;&bull;&nbsp; Тема <a href=https://github.com/halogenica/beautifulhugo>Beautiful Hugo</a> на базе <a href=https://deanattali.com/beautiful-jekyll/>Beautiful Jekyll</a></p></div></div></div></footer><script defer src=https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js integrity=sha384-G0zcxDFp5LWZtDuRMnBkk3EphCK1lhEf4UEyEM693ka574TZGwo4IWwS6QLzM/2t crossorigin=anonymous></script><script defer src=https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js integrity=sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05 crossorigin=anonymous onload=renderMathInElement(document.body)></script><script src=https://code.jquery.com/jquery-3.7.0.slim.min.js integrity=sha384-w5y/xIeYixWvfM+A1cEbmHPURnvyqmVg5eVENruEdDjcyRLUSNej7512JQGspFUr crossorigin=anonymous></script><script src=https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js integrity=sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd crossorigin=anonymous></script><script src=/js/main.js></script><script src=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js integrity=sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy crossorigin=anonymous></script><script src=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js integrity=sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q crossorigin=anonymous></script><script src=/js/load-photoswipe.js></script></body></html>
+
+
+<!DOCTYPE html>
+<html lang="ru" itemscope itemtype="http://schema.org/WebPage">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    
+    <script type="text/javascript" >
+      (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+      m[i].l=1*new Date();
+      for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+      k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+      (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+      ym(103109520, "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true
+      });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/103109520" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    
+    
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+ 
+
+
+      <title>Превращаем заметки Obsidian в посты Hugo - </title>
+
+  <meta name="description" content="Конвертация заметок Obsidian в посты для Hugo с использованием консольной утилиты obsidian2hugo"><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "Круг интересов",
+    
+    "url": "\/\/localhost:1313\/"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "\/\/localhost:1313\/"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "\/\/localhost:1313\/",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "\/\/localhost:1313\/posts\/obsidian2hugo\/",
+          "name": "Превращаем заметки obsidian в посты hugo"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : ""
+  },
+  "headline": "Превращаем заметки Obsidian в посты Hugo",
+  "description" : "Конвертация заметок Obsidian в посты для Hugo с использованием консольной утилиты obsidian2hugo",
+  "inLanguage" : "ru",
+  "wordCount":  144 ,
+  "datePublished" : "2025-06-30T17:52:25\u002b03:00",
+  "dateModified" : "2025-06-30T17:52:25\u002b03:00",
+  "image" : "\/\/localhost:1313\/",
+  "keywords" : [ "obsidian, hugo" ],
+  "mainEntityOfPage" : "\/\/localhost:1313\/posts\/obsidian2hugo\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "\/\/localhost:1313\/",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "\/\/localhost:1313\/",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+
+<meta property="og:title" content="Превращаем заметки Obsidian в посты Hugo" />
+<meta property="og:description" content="Конвертация заметок Obsidian в посты для Hugo с использованием консольной утилиты obsidian2hugo">
+<meta property="og:url" content="//localhost:1313/posts/obsidian2hugo/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Круг интересов" />
+
+  <meta name="twitter:title" content="Превращаем заметки Obsidian в посты Hugo" />
+  <meta name="twitter:description" content="Конвертация заметок Obsidian в посты для Hugo с использованием консольной утилиты obsidian2hugo">
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="generator" content="Hugo 0.147.8">
+  <link rel="alternate" href="//localhost:1313/index.xml" type="application/rss+xml" title="Круг интересов"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css" integrity="sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.6.0/css/all.css" integrity="sha384-h/hnnw1Bi4nbpD6kE7nYfCXzovi622sY5WBxww8ARKwpdLj5kUWjRuyiXaD1U2JT" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous"><link rel="stylesheet" href="//localhost:1313/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" /><link rel="stylesheet" href="//localhost:1313/css/syntax.css" /><link rel="stylesheet" href="//localhost:1313/css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Навигация</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="//localhost:1313/">Круг интересов</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    
+
+  </div>
+</nav>
+
+
+
+
+    
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+  
+  
+  
+
+
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="posts-heading">
+              
+                <h1>Превращаем заметки Obsidian в посты Hugo</h1>
+              
+              
+                <hr class="small">
+              
+              
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+
+        <p>Когда решил вернуться к написанию постов в блог, решил перевести его на генерацию статических сайтов <a href="https://gohugo.io">Hugo</a>. А так как к тому моменту я успел полюбить <a href="https://obsidian.md">Obsidian</a>, то стал решать, как бы так сделать, чтобы писать статьи в нем, а в Hugo транслировать с нужными модификациями. Готовые решения меня не устроили (то одно не так то другое не то), решил сделать что-то свое.</p>
+<p>Плагин для Obsidian не осилил (никогда не писал на TypeScript), поэтому с помощью ИИ накидал варианты на Python и Go. Скачать можно <a href="https://github.com/dstarod/obsidian2hugo">с моего GitHub</a>.</p>
+<p>Ключевые штуки:</p>
+<ul>
+<li>формат постов - <a href="https://gohugo.io/content-management/page-bundles/">Page Bundles</a> согласно <a href="https://github.com/spech66/hugo-best-practices?tab=readme-ov-file#content-organization">лучших практик</a></li>
+<li>встроенные изображения преобразуются в Markdown-ссылки</li>
+<li>вики-ссылки преобразуются в простой текст</li>
+</ul>
+<p>При запуске указываются:</p>
+<ul>
+<li>путь к каталогу заметками</li>
+<li>путь к каталогу вложений</li>
+<li>путь к каталогу с постами</li>
+<li>тег - признак, что заметка для блога</li>
+<li>возможность убирать этот тег-признак из постов</li>
+<li>cписок имен каталогов, которые нужно исключить из сканирования</li>
+</ul>
+
+
+        
+          <div class="blog-tags">
+            
+              
+              <a href="//localhost:1313/tags/obsidian/">obsidian</a>&nbsp;
+            
+              
+              <a href="//localhost:1313/tags/hugo/">hugo</a>&nbsp;
+            
+          </div>
+        
+
+        
+
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="//localhost:1313/posts/gemini-cli-howto/" data-toggle="tooltip" data-placement="top" title="Консольный ИИ-агент Gemini CLI">&larr; Предыдущий</a>
+            </li>
+          
+          
+        </ul>
+      
+
+
+      
+
+    </div>
+  </div>
+</div>
+
+      <footer>
+  <div class="container">
+    
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+            2025
+          
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="//localhost:1313/">Круг интересов</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          На базе <a href="https://gohugo.io">Hugo v0.147.8</a> &nbsp;&bull;&nbsp; Тема <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> на базе <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js" integrity="sha384-G0zcxDFp5LWZtDuRMnBkk3EphCK1lhEf4UEyEM693ka574TZGwo4IWwS6QLzM/2t" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+<script src="https://code.jquery.com/jquery-3.7.0.slim.min.js" integrity="sha384-w5y/xIeYixWvfM+A1cEbmHPURnvyqmVg5eVENruEdDjcyRLUSNej7512JQGspFUr" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+
+<script src="//localhost:1313/js/main.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script><script src="//localhost:1313/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+
+
+
+
+    
+  </body>
+</html>
+
