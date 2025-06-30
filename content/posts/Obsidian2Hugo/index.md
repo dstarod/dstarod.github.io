@@ -1,7 +1,7 @@
 ---
 date: 2025-06-30T17:52:25+03:00
 description: Конвертация заметок Obsidian в посты для Hugo с использованием консольной утилиты obsidian2hugo
-draft: true
+draft: false
 slug: obsidian2hugo
 tags:
     - obsidian
