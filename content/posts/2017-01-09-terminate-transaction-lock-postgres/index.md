@@ -4,7 +4,6 @@ draft: false
 slug: terminate-transaction-lock-postgres
 tags:
     - postgres
-    - memo
 title: Как остановить зависшую транзакцию в PostgreSQL
 ---
 

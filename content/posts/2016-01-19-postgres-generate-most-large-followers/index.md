@@ -3,7 +3,7 @@ date: 2016-01-19T00:00:00+03:00
 draft: false
 slug: postgres-generate-most-large-followers
 tags:
-    - postgresql
+    - postgres
 title: 'Postgres: generate the most large followers intersections'
 ---
 

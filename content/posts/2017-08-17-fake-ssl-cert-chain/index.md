@@ -4,7 +4,6 @@ draft: false
 slug: fake-ssl-cert-chain
 tags:
     - ssl
-    - memo
     - python
 title: Создание валидной цепочки SSL сертификатов
 ---

@@ -4,7 +4,6 @@ draft: false
 slug: idea-trial
 tags:
     - apps
-    - hack
 title: Intellij IDEA - сброс триального периода
 ---
 

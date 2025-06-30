@@ -4,7 +4,6 @@ draft: false
 slug: remove-idea-completely
 tags:
     - apps
-    - hack
 title: Полное удаление Intellij IDEA или Вечный Триал
 ---
 

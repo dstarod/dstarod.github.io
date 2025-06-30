@@ -3,7 +3,7 @@ date: 2017-04-13T00:00:00+03:00
 draft: false
 slug: sublime-plugin-dict-to-json
 tags:
-    - memo
+    - sublime
 title: Плагин для Sublime Text своими руками
 ---
 

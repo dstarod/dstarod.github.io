@@ -4,7 +4,6 @@ draft: false
 slug: python-grandchilds
 tags:
     - python
-    - process
 title: Python и пляски с процессами
 ---
 

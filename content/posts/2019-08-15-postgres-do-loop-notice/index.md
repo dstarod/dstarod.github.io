@@ -3,7 +3,7 @@ date: 2019-08-15T00:00:00+03:00
 draft: false
 slug: postgres-do-loop-notice
 tags:
-    - postgresql
+    - postgres
 title: Использование цикла в PostgreSQL с выводом в консоль
 ---
 
