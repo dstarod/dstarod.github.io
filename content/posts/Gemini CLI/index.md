@@ -3,6 +3,8 @@ date: 2025-06-29T19:10:14+03:00
 description: Установка, настройка, примеры использования gemini-cli
 draft: false
 slug: gemini-cli-howto
+tags:
+    - ai
 title: Консольный ИИ-агент Gemini CLI
 ---
 

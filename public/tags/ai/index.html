@@ -27,9 +27,8 @@
  
 
 
-      <title>Консольный ИИ-агент Gemini CLI - </title>
-
-  <meta name="description" content="Установка, настройка, примеры использования gemini-cli"><script type="application/ld+json">
+      <title>Ai - </title>
+<script type="application/ld+json">
 {
     "@context": "http://schema.org",
     "@type": "WebSite",
@@ -49,64 +48,13 @@
   
 }
 </script>
-<script type="application/ld+json">
-{
-  "@context": "http://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [{
-        "@type": "ListItem",
-        "position": 1,
-        "item": {
-          "@id": "\/\/localhost:1313\/",
-          "name": "home"
-        }
-    },{
-        "@type": "ListItem",
-        "position": 3,
-        "item": {
-          "@id": "\/\/localhost:1313\/posts\/gemini-cli-howto\/",
-          "name": "Консольный ии агент gemini CLI"
-        }
-    }]
-}
-</script><script type="application/ld+json">
-{
-  "@context": "http://schema.org",
-  "@type": "Article",
-  "author": {
-    "name" : ""
-  },
-  "headline": "Консольный ИИ-агент Gemini CLI",
-  "description" : "Установка, настройка, примеры использования gemini-cli",
-  "inLanguage" : "ru",
-  "wordCount":  176 ,
-  "datePublished" : "2025-06-29T19:10:14\u002b03:00",
-  "dateModified" : "2025-06-29T19:10:14\u002b03:00",
-  "image" : "\/\/localhost:1313\/",
-  "keywords" : [ "ai" ],
-  "mainEntityOfPage" : "\/\/localhost:1313\/posts\/gemini-cli-howto\/",
-  "publisher" : {
-    "@type": "Organization",
-    "name" : "\/\/localhost:1313\/",
-    "logo" : {
-        "@type" : "ImageObject",
-        "url" : "\/\/localhost:1313\/",
-        "height" :  60 ,
-        "width" :  60
-    }
-  }
-}
-</script>
 
-
-<meta property="og:title" content="Консольный ИИ-агент Gemini CLI" />
-<meta property="og:description" content="Установка, настройка, примеры использования gemini-cli">
-<meta property="og:url" content="//localhost:1313/posts/gemini-cli-howto/" />
+<meta property="og:title" content="Ai" />
+<meta property="og:url" content="//localhost:1313/tags/ai/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Круг интересов" />
 
-  <meta name="twitter:title" content="Консольный ИИ-агент Gemini CLI" />
-  <meta name="twitter:description" content="Установка, настройка, примеры использования gemini-cli">
+  <meta name="twitter:title" content="Ai" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="generator" content="Hugo 0.147.8">
   <link rel="alternate" href="//localhost:1313/index.xml" type="application/rss+xml" title="Круг интересов"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css" integrity="sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI" crossorigin="anonymous">
@@ -213,9 +161,9 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <div class="posts-heading">
+            <div class="tags-heading">
               
-                <h1>Консольный ИИ-агент Gemini CLI</h1>
+                <h1>Ai</h1>
               
               
                 <hr class="small">
@@ -232,11 +180,40 @@
 
 
     
-<div class="container" role="main">
-  <div class="row">
-    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-      <article role="main" class="blog-post">
+  <div class="container" role="main">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+        <div class="posts-list">
+          
+            <article class="post-preview">
+    <a href="//localhost:1313/posts/gemini-cli-howto/">
+        <h2 class="post-title">Консольный ИИ-агент Gemini CLI</h2>
+        
+        
+        
+    </a>
 
+    <p class="post-meta">
+        <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Опубликовано 29.06.2025
+  
+  
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;
+    
+  
+  
+</span>
+
+
+    </p>
+    <div class="post-entry">
+        
         <p>Gemini CLI - консольный ИИ-агент от Google. Работает с моделью <code>gemini-2.5-pro</code>. Позволяет делать бесплатно 1000 запросов в день и дает контекстное окно в миллион токенов. Умеет работать с файловой системой на компьютере, делать запросы в интернете и пользоваться поисковиком Google.</p>
 <p><strong>Что немаловажно: работает в России.</strong></p>
 <ul>
@@ -248,69 +225,26 @@
 <div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>npm install -g @google/gemini-cli
 </span></span></code></pre></div><h2 id="подготовка-к-запуску">Подготовка к запуску</h2>
 <p>Чтобы использовать агента бесплатно, есть несколько путей. Опишу использование варианта с аккаунтом в Google.</p>
-<ul>
-<li>создать проект в Google по <a href="https://developers.google.com/workspace/guides/create-project?hl=ru">инструкции</a></li>
-<li>в новом проекте из раздела <em>Project Info</em> скопировать <em>Project ID</em>.</li>
-<li>добавить его в переменную (<code>export GOOGLE_CLOUD_PROJECT=&quot;PROJ_ID&quot;</code>)</li>
-<li>даем доступ <a href="https://console.cloud.google.com/apis/library/cloudaicompanion.googleapis.com">Gemini for Google Cloud</a></li>
-</ul>
-<h2 id="запускаем">Запускаем</h2>
-<div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gemini
-</span></span></code></pre></div><p>На просьбу авторизоваться делаем это через Google под тем-же пользователем, чей проект создавали.
-Готово. Можно пользоваться.</p>
-<h2 id="полезные-команды">Полезные команды</h2>
-<p>Сохранить чат, продолжить сохраненный ранее чат</p>
-<pre tabindex="0"><code>/chat save &lt;tag&gt;
-/chat resume &lt;tag&gt;
-/chat list
-</code></pre><p>Сжатие контекста (для экономии токенов)</p>
-<pre tabindex="0"><code>/compress
-</code></pre><p>Статистика использования</p>
-<pre tabindex="0"><code>/stats
-</code></pre><p>Управление установками агента (как это делали бы через <code>GEMINI.md</code>)</p>
-<pre tabindex="0"><code>/memory
-</code></pre><p>Выбор темы</p>
-<pre tabindex="0"><code>/theme
-</code></pre><p>Выход</p>
-<pre tabindex="0"><code>/exit
-</code></pre><p>Все команды можно увидеть если вести <code>/</code>. Документацию покажут командой <code>/docs</code>.</p>
-
-
+        <a href="//localhost:1313/posts/gemini-cli-howto/" class="post-read-more">[Далее]</a>
         
-          <div class="blog-tags">
-            
-              
-              <a href="//localhost:1313/tags/ai/">ai</a>&nbsp;
-            
-          </div>
+    </div>
+
+    
+    <div class="blog-tags">
         
+       
+       <a href="//localhost:1313/tags/ai/">ai</a>&nbsp;
+         
+    </div>
+    
 
+</article>
+          
+        </div>
         
-
-        
-      </article>
-
-      
-        <ul class="pager blog-pager">
-          
-            <li class="previous">
-              <a href="//localhost:1313/posts/postgres-do-loop-notice/" data-toggle="tooltip" data-placement="top" title="Использование цикла в PostgreSQL с выводом в консоль">&larr; Предыдущий</a>
-            </li>
-          
-          
-            <li class="next">
-              <a href="//localhost:1313/posts/obsidian2hugo/" data-toggle="tooltip" data-placement="top" title="Превращаем заметки Obsidian в посты Hugo">Следующий &rarr;</a>
-            </li>
-          
-        </ul>
-      
-
-
-      
-
+      </div>
     </div>
   </div>
-</div>
 
       <footer>
   <div class="container">
