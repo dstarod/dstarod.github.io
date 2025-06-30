@@ -6,8 +6,7 @@ defaultContentLanguage = 'ru'
 enableRobotsTXT = 'true'
 
 [params]
-description = 'В основном тут про IT'
-# subtitle = 'Reference, Tutorials, and Explanations'
+  description = "В основном тут про IT"
 
 [permalinks]
   [permalinks.page]
