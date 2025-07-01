@@ -2,9 +2,4 @@
 цепочек и приватных ключей. Прошерстив некоторый объем интернета, я собрал всю необходимую информацию о том,
 как локально сгенерировать корректную цепочку SSL сертификатов, которая будет проходить проверку стандартными
 средствами.&lt;/p>
-&lt;p>Чтобы не писать кучу команд всякий раз, напишем bash-скрипт. Для начала, зададим несколько настроечных констант:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">CSR_FILE&lt;/span>=&lt;span style="color:#2aa198">&amp;#34;csrfile.csr&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">KEY_BITS&lt;/span>=&lt;span style="color:#2aa198;font-weight:bold">2048&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">CONF_DIR&lt;/span>=&lt;span style="color:#2aa198">&amp;#34;conf&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">CHAIN_CRT&lt;/span>=&lt;span style="color:#2aa198">&amp;#34;ca_chain.crt&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Затем пара функций для подготовки и последующей подчистки каталога с настройками:&lt;/p></description></item></channel></rss>
+&lt;p>Чтобы не писать кучу команд всякий раз, напишем bash-скрипт. Для начала, зададим несколько настроечных констант:&lt;/p></description></item></channel></rss>

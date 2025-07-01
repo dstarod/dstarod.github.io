@@ -4,9 +4,10 @@ title = 'Круг интересов'
 theme = 'beautiful_hugo'
 defaultContentLanguage = 'ru'
 enableRobotsTXT = 'true'
+summaryLength = 42
 
 [params]
-  description = "В основном тут про IT"
+  Description = "В основном тут про IT"
 
 [permalinks]
   [permalinks.page]
