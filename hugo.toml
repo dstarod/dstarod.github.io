@@ -17,3 +17,13 @@ summaryLength = 42
 [markup]
   [markup.highlight]
     style = 'solarized-light'
+
+[menus]
+  [[menus.main]]
+    name = 'Home'
+    pageRef = '/'
+    weight = 10
+  [[menus.main]]
+    name = 'Telegram'
+    url = 'https://t.me/interests_range'
+    weight = 20
