@@ -20,10 +20,6 @@ summaryLength = 42
 
 [menus]
   [[menus.main]]
-    name = 'Home'
-    pageRef = '/'
-    weight = 10
-  [[menus.main]]
-    name = 'Telegram'
+    name = 'Telegram-канал'
     url = 'https://t.me/interests_range'
     weight = 20

@@ -6,7 +6,7 @@ slug: obsidian-to-telegraph
 title: Превращаем заметки Obsidian в посты Telegraph
 ---
 
-Чтобы писать посты в [Obsidian](https://obsidian.md) и постить в Telegraph прям с картинками, таблицами, Dataview и прочими плюшками, достаточно копировать заметку в HTML с помощью плагина [Copy Document as HTML](https://github.com/mvdkwast/obsidian-copy-as-html)
+Чтобы писать посты в [Obsidian](https://obsidian.md) и постить в Telegraph прям с таблицами, Dataview и прочими плюшками, достаточно копировать заметку в HTML с помощью плагина [Copy Document as HTML](https://github.com/mvdkwast/obsidian-copy-as-html)
 
 Ставим плагин и настраиваем как хочется:
 
