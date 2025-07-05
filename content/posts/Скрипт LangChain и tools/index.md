@@ -1,7 +1,7 @@
 ---
 date: 2025-07-05T16:00:07+03:00
 description: Создание ИИ-агента на Python с помощью библиотеки LangChain
-draft: true
+draft: false
 slug: ai-agent-python-with-langchain-and-tools
 tags:
     - ai
