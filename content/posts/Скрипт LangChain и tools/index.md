@@ -157,7 +157,7 @@ storage = Storage()
 @tool
 def add_furniture(furn: Furniture) -> Furniture:
     """
-    Добавление конфигурации
+    Добавление предмета мебели
 
     Args:
         furn (Furniture): предмет мебели

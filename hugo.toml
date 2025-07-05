@@ -21,6 +21,5 @@ summaryLength = 42
 [menus]
   [[menus.main]]
     name = 'Telegram-канал'
-    pre = '<i class="fa-solid fa-code">dd</i>'
     url = 'https://t.me/interests_range'
     weight = 20
