@@ -1,7 +1,7 @@
 ---
 date: 2025-07-09T15:51:32+03:00
 description: Создание MCP-сервера и его использование ИИ-агентом на Python с библиотеками LangChain и FastMCP
-draft: true
+draft: false
 slug: mcp-server-ai-agent-python
 tags:
     - python
