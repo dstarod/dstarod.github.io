@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Fish on Круг интересов</title><link>/tags/fish/</link><description>Recent content in Fish on Круг интересов</description><generator>Hugo</generator><language>ru-RU</language><lastBuildDate>Thu, 27 Jul 2017 00:00:00 +0300</lastBuildDate><atom:link href="/tags/fish/index.xml" rel="self" type="application/rss+xml"/><item><title>Удобные команды и алиасы для GIT</title><link>/posts/git-tricks-and-aliases-with-fish/</link><pubDate>Thu, 27 Jul 2017 00:00:00 +0300</pubDate><guid>/posts/git-tricks-and-aliases-with-fish/</guid><description>&lt;p>Несколько удобных алиасов для git, чтобы не потерять, положу это здесь.
-Я использую оболочку &lt;a href="https://fishshell.com/">fish&lt;/a>, поэтому возможно какие-то команды потребуется адаптировать для вашей.
-Шикарный набор советов &lt;a href="https://github.com/git-tips/tips">здесь&lt;/a>.&lt;/p>
-&lt;p>Лог в виде дерева:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#859900">function&lt;/span> gl
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> git log --oneline --decorate --graph --all
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>end
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Интерактивный rebase с указанного в аргументах коммита:&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Fish on Круг интересов</title><link>/tags/fish/</link><description>Recent content in Fish on Круг интересов</description><generator>Hugo</generator><language>ru-RU</language><lastBuildDate>Thu, 27 Jul 2017 00:00:00 +0300</lastBuildDate><atom:link href="/tags/fish/index.xml" rel="self" type="application/rss+xml"/><item><title>Удобные команды и алиасы для GIT</title><link>/posts/git-tricks-and-aliases-with-fish/</link><pubDate>Thu, 27 Jul 2017 00:00:00 +0300</pubDate><guid>/posts/git-tricks-and-aliases-with-fish/</guid><description>&lt;p&gt;Несколько удобных алиасов для git, чтобы не потерять, положу это здесь.
+Я использую оболочку &lt;a href="https://fishshell.com/"&gt;fish&lt;/a&gt;, поэтому возможно какие-то команды потребуется адаптировать для вашей.
+Шикарный набор советов &lt;a href="https://github.com/git-tips/tips"&gt;здесь&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Лог в виде дерева:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#859900"&gt;function&lt;/span&gt; gl
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; git log --oneline --decorate --graph --all
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;end
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Интерактивный rebase с указанного в аргументах коммита:&lt;/p&gt;</description></item></channel></rss>

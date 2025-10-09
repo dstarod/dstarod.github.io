@@ -4,8 +4,8 @@ description: Как в консоли изменить теги для mp3 ма�
 draft: false
 slug: console-mp3-tags
 tags:
-    - console
     - utils
+    - cli
 title: Скрипт массового изменения ID3 для mp3
 ---
 
@@ -29,7 +29,7 @@ for i in *.mp3
                 --track $num \
                 --title $name \
                 --artist 'Библейская церковь' \
-                --release-date $reldate \
+                --recording-date $reldate \
                 --album "Богослужение $reldate" \
                 --add-image /path/to/cover.jpg:FRONT_COVER \
                 --encoding utf8 --force-update --to-v2.4 \

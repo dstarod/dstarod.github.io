@@ -3,6 +3,8 @@ date: 2025-07-05T13:21:43+03:00
 description: Конвертация заметок Obsidian в посты для Telegraph с использованием плагина Copy document as HTML
 draft: false
 slug: obsidian-to-telegraph
+tags:
+    - obsidian
 title: Превращаем заметки Obsidian в посты Telegraph
 ---
 
